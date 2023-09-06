@@ -13,5 +13,5 @@ class GitHubRepositoryList with _$GitHubRepositoryList {
     required List<GitHubRepository> items,
   }) = _GitHubRepositoryList;
 
-  factory GitHubRepositoryList.fromJson(Map<String, dynamic> json) => _GitHubRepositoryListFromJson(json);
+  factory GitHubRepositoryList.fromJson(Map<String, dynamic> json) => _$GitHubRepositoryListFromJson(json);
 }
