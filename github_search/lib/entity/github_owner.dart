@@ -10,5 +10,5 @@ class GitHubOwner with _$GitHubOwner {
     @JsonKey(name: 'avatar_url') String? avatarUrlString
   }) = _GitHubOwner;
 
-  factory GitHubOwner.fromJson(Map<String, dynamic> json) => _GitHubOwnerFromJson(json);
+  factory GitHubOwner.fromJson(Map<String, dynamic> json) => _$GitHubOwnerFromJson(json);
 }
