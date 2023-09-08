@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 import 'package:github_search/repository/network/request/request_interface.dart';
 
-class APIClient {
+class APIService {
   final http.Client _client = http.Client();
   final Duration _timeOut = const Duration(seconds: 30);
 
