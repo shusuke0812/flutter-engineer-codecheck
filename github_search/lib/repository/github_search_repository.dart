@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:github_search/entity/github_repository.dart';
+import 'package:github_search/entity/github_repository_list.dart';
 import 'package:github_search/repository/network/api_service.dart';
 import 'package:github_search/repository/network/request/github_search_request.dart';
 
@@ -12,7 +12,7 @@ import 'package:github_search/repository/network/result.dart';
 // Interface
 
 abstract class GitHubSearchRepositoryInterface {
-  Future<Result<GitHubRepository>> getRepositories({required String searchWord});
+  Future<Result<GitHubRepositoryList>> getRepositories({required String searchWord});
 }
 
 //  Implements
@@ -20,11 +20,11 @@ abstract class GitHubSearchRepositoryInterface {
 class GitHubSearchRepository implements GitHubSearchRepositoryInterface {
   final APIService apiService = APIService();
 
-  Future<Result<GitHubRepository>> getRepositories({required String searchWord}) async {
+  Future<Result<GitHubRepositoryList>> getRepositories({required String searchWord}) async {
     final request = GitHubSearchRequest(searchWord: searchWord);
     try {
       final response = await apiService.sendRequest(request);
-      return Result.success(GitHubRepository.fromJson(json.decode(response.body)));
+      return Result.success(GitHubRepositoryList.fromJson(json.decode(response.body)));
     } catch(_) {
       return Result.error(Error()); // TODO: change custom error type
     }
