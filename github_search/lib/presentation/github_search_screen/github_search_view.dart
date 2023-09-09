@@ -22,6 +22,7 @@ class _GitHubSearchViewState extends State<GitHubSearchView> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
+          // NOTE: debug for getting REST api response
           Provider.of<GitHubSearchViewModel>(context, listen: false).loadRepositoryList("swift");
         },
       ),
