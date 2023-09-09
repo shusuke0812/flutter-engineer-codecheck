@@ -2,7 +2,7 @@
 
 ## Architecture
 
-MVVM like a native app. This architecture follows parts of [the Android App Architecture](https://developer.android.com/topic/architecture).
+I adopt MVVM like a native app as Flutter architecture. This architecture follows parts of [the Android App Architecture](https://developer.android.com/topic/architecture).
 
 ![flutter_mvvm](https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/a625d45f-30eb-4083-932b-5d263ff7c564)
 
