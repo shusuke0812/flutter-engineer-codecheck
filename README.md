@@ -8,7 +8,16 @@ MVVM like a native app. This architecture follows parts of [the Android App Arch
 
 ## Features
 
-getting ready
+<table>
+    <tr>
+        <th>Search</th>
+        <th>Detail</th>
+    </tr>
+    <tr>
+        <td><img width=300 src="https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/91f5b20a-292d-4e0d-982e-7ea3b1c931b9"></td>
+        <td>getting ready</td>
+    </tr>
+</table>
 
 ## Reference
 
