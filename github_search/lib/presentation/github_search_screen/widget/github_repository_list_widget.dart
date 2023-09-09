@@ -24,7 +24,7 @@ class _GitHubRepositoryListWidgetState extends State<GitHubRepositoryListWidget>
         child: ListView.separated(
           scrollDirection: Axis.vertical,
           itemCount: widget.list?.items.length ?? 0,
-          separatorBuilder: (_, __) {
+          separatorBuilder: (context, index) {
             return const Divider();
           },
           itemBuilder: (BuildContext context, int index) {
