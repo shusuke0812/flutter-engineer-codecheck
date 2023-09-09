@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
         ),
-        home: const GitHubSearchView(title: "GitHub Search")
+        home: const GitHubSearchView(title: "Home")
       ),
     );
   }
