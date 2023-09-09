@@ -9,6 +9,7 @@ import 'package:github_search/repository/network/result.dart';
 
 // Reference
 // - repository pattern on Flutter: https://codewithandrea.com/articles/flutter-repository-pattern/#writing-tests-with-repositories
+// - repository with Riverpod: https://riverpod.dev/docs/cookbooks/testing#overriding-the-behavior-of-a-provider-during-tests
 
 // Interface
 
