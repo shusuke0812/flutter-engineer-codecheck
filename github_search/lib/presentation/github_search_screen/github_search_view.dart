@@ -1,4 +1,4 @@
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:github_search/presentation/github_search_screen/github_search_viewmodel.dart';
 import 'package:github_search/presentation/github_search_screen/widget/github_repository_list_widget.dart';
@@ -14,6 +14,17 @@ class GitHubSearchView extends StatefulWidget {
 }
 
 class _GitHubSearchViewState extends State<GitHubSearchView> {
+  Widget? _debugFloatingActionButton() {
+    return kDebugMode ?
+      FloatingActionButton(
+        onPressed: () async {
+          // NOTE: debug for getting REST api response
+          Provider.of<GitHubSearchViewModel>(context, listen: false).loadRepositoryList("swift");
+        }
+      )
+      : null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,12 +44,7 @@ class _GitHubSearchViewState extends State<GitHubSearchView> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          // NOTE: debug for getting REST api response
-          Provider.of<GitHubSearchViewModel>(context, listen: false).loadRepositoryList("swift");
-        },
-      ),
+      floatingActionButton: _debugFloatingActionButton(),
     );
   }
 }
