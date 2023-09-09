@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/entity/github_repository.dart';
 
-class GitHubRepositoryCellWidget extends StatefulWidget {
-  const GitHubRepositoryCellWidget({
-    Key? key,
-    required this.repository
-  }) : super(key: key);
-
+class GitHubRepositoryCellWidget extends StatelessWidget {
+  const GitHubRepositoryCellWidget({super.key, required this.repository});
   final GitHubRepository? repository;
 
-  @override
-  State<GitHubRepositoryCellWidget> createState() => _GitHubRepositoryCellWidgetState();
-}
-
-class _GitHubRepositoryCellWidgetState extends State<GitHubRepositoryCellWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,14 +13,14 @@ class _GitHubRepositoryCellWidgetState extends State<GitHubRepositoryCellWidget>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            widget.repository?.name ?? "", 
+            repository?.name ?? "", 
             style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(height: 5),
           Text(
-            widget.repository?.description ?? "",
+            repository?.description ?? "",
             style: const TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
