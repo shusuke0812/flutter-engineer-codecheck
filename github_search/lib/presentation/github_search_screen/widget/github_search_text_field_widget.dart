@@ -22,20 +22,23 @@ class GitHubSearchTextFieldWidget extends StatelessWidget {
         onChanged: onChanged,
         decoration: const InputDecoration(
           border: InputBorder.none,
-          enabledBorder: OutlineInputBorder( // TODO: follow DRY
-            borderRadius: BorderRadius.all(Radius.circular(34)),
-            borderSide: BorderSide(color: Colors.blueGrey)
+          enabledBorder: OutlineInputBorder( // TODO: DRY
+            borderRadius: BorderRadius.all(Radius.circular(28)),
+            borderSide: BorderSide(color: Colors.white)
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(34)),
-            borderSide: BorderSide(color: Colors.blueGrey)
+            borderRadius: BorderRadius.all(Radius.circular(28)),
+            borderSide: BorderSide(color: Colors.white)
           ),
           prefixIcon: Icon(
             FontAwesomeIcons.magnifyingGlass,
             color: Colors.blueGrey,
             size: 17,
           ),
-          hintText: "Search GitHub"
+          hintText: "Search GitHub",
+          hintStyle: TextStyle(color: Colors.blueGrey),
+          filled: true,
+          fillColor: Colors.black12,
         ), // NOTE: for incremental search
       ),
     );
