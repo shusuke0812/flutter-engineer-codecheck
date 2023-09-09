@@ -1,3 +1,20 @@
+# GitHub Search App
+
+## Architecture
+
+MVVM like a native app. This architecture follows parts of [the Android App Architecture](https://developer.android.com/topic/architecture).
+
+![flutter_mvvm](https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/a625d45f-30eb-4083-932b-5d263ff7c564)
+
+## Features
+
+getting ready
+
+## Reference
+
+<details>
+<summary>Yumemi inc. examination</summary>
+
 # 株式会社ゆめみ Flutter エンジニアコードチェック課題
 
 本プロジェクトは株式会社ゆめみ（以下弊社）が、弊社に Flutter エンジニアを希望する方に出す課題用のプロジェクトです。 本課題が与えられた方は、以下を詳しく読んだ上で課題に取り組んでください。
@@ -92,3 +109,5 @@ ChatGPT等のAIサービスを利用することは、禁止しておりませ�
 
 また、弊社コードチェック担当者もAIサービスを利用させていただく場合があります。
 AIサービスの利用は差し控えてもらいたい等のご要望があれば、お気軽にお知らせください。
+
+</details>
