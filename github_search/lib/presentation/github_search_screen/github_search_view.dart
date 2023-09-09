@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:github_search/presentation/github_search_screen/github_search_viewmodel.dart';
+import 'package:github_search/presentation/github_search_screen/widget/github_repository_list_widget.dart';
 import 'package:provider/provider.dart';
 
 class GitHubSearchView extends StatefulWidget {
@@ -16,8 +17,8 @@ class _GitHubSearchViewState extends State<GitHubSearchView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
-      body: Center(
-        child: Text("test", style: Theme.of(context).textTheme.headlineMedium),
+      body: GitHubRepositoryListWidget(
+        list: Provider.of<GitHubSearchViewModel>(context).list
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
