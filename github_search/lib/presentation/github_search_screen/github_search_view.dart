@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search/presentation/github_search_screen/github_search_viewmodel.dart';
 import 'package:github_search/presentation/github_search_screen/widget/github_repository_list_widget.dart';
 import 'package:github_search/presentation/github_search_screen/widget/github_search_text_field_widget.dart';
@@ -17,6 +18,7 @@ class _GitHubSearchViewState extends State<GitHubSearchView> {
   Widget? _debugFloatingActionButton() {
     return kDebugMode ?
       FloatingActionButton(
+        child: const Icon(FontAwesomeIcons.bolt),
         onPressed: () async {
           // NOTE: debug for getting REST api response
           Provider.of<GitHubSearchViewModel>(context, listen: false).loadRepositoryList("swift");
