@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:github_search/presentation/github_search_screen/github_search_view.dart';
 import 'package:github_search/presentation/github_repository_detail_screen/github_repository_detail_view.dart';
 
-final router = GoRouter(
+final appRouter = GoRouter(
   initialLocation: RoutePath.repositoryList.path,
   routes: [
     GoRoute(
