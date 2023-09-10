@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/entity/github_repository_list.dart';
-import 'package:github_search/logger.dart';
+import 'package:github_search/utility/logger.dart';
 import 'package:github_search/presentation/github_search_screen/widget/github_repository_cell_widget.dart';
 
 class GitHubRepositoryListWidget extends StatelessWidget {
