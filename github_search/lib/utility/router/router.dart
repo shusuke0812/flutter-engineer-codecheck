@@ -33,5 +33,13 @@ final router = GoRouter(
         );
       },
     )
-  ]
+  ],
+  errorPageBuilder:(context, state) {
+    return MaterialPage(
+      key: state.pageKey,
+      child: Center(
+        child: Text(state.error.toString()),
+      )
+    );
+  },
 );
