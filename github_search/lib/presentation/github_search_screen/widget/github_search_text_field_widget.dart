@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_search/logger.dart';
 
 class GitHubSearchTextFieldWidget extends StatelessWidget {
   const GitHubSearchTextFieldWidget({
@@ -13,32 +14,40 @@ class GitHubSearchTextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final editingController = TextEditingController();
+
     return Padding(
       padding: const EdgeInsets.all(16),
       child: TextField(
         style: const TextStyle(fontSize: 17, color: Colors.blueGrey),
-        controller: TextEditingController(),
+        controller: editingController,
         onSubmitted: onSubmitted,
         onChanged: onChanged,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           border: InputBorder.none,
-          enabledBorder: OutlineInputBorder( // TODO: DRY
+          enabledBorder: const OutlineInputBorder( // TODO: DRY
             borderRadius: BorderRadius.all(Radius.circular(28)),
             borderSide: BorderSide(color: Colors.white)
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(28)),
             borderSide: BorderSide(color: Colors.white)
           ),
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             FontAwesomeIcons.magnifyingGlass,
             color: Colors.blueGrey,
             size: 17,
           ),
           hintText: "Search GitHub",
-          hintStyle: TextStyle(color: Colors.blueGrey),
+          hintStyle: const TextStyle(color: Colors.blueGrey),
           filled: true,
           fillColor: Colors.black12,
+          suffixIcon: IconButton(
+            onPressed: () => editingController.clear(), 
+            icon: const Icon(FontAwesomeIcons.circleXmark),
+            color: Colors.blueGrey,
+            iconSize: 17,
+          )
         ), // NOTE: for incremental search
       ),
     );
