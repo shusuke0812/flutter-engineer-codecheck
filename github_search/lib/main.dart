@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:github_search/presentation/github_search_screen/github_search_view.dart';
 import 'package:github_search/presentation/github_search_screen/github_search_viewmodel.dart';
 import 'package:github_search/repository/github_search_repository.dart';
+import 'package:github_search/utility/router/router.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,12 +17,14 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(value: GitHubSearchViewModel(githubSearchRepository: GitHubSearchRepository()))
       ],
-      child: MaterialApp(
+      child: MaterialApp.router(
+        routerDelegate: appRouter.routerDelegate,
+        routeInformationParser: appRouter.routeInformationParser,
+        routeInformationProvider: appRouter.routeInformationProvider,
         title: 'GitHub Search',
         theme: ThemeData(
           primarySwatch: Colors.blueGrey,
         ),
-        home: const GitHubSearchView(title: "Home")
       ),
     );
   }
