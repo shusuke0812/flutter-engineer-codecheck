@@ -1,0 +1,59 @@
+ame: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: app-version
+    attributes:
+      label: GitHub Search App Version
+      description: run `flutter pub get` in your project
+      placeholder: ex. 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: flutter-version
+    attributes:
+      label: Flutter Version
+      description: run `flutter --version` in your project
+      placeholder: ex. 3.10.6
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: What OS?
+      description: please add this to your title
+      multiple: true
+      options:
+        - Android
+        - iOS
+        - Other
+        - All
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: What version of iOS/Android/MacOS are you on?
+      placeholder: ex. iOS 16.6
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: And, what did you expect to happen?
+      placeholder: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Copy and paste all log output.
+      placeholder: Ideally include all logs from the very begining
+      render: shell
+    validations:
+      required: true
