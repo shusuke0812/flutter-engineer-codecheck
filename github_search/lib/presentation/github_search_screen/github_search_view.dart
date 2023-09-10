@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search/presentation/github_search_screen/github_search_viewmodel.dart';
 import 'package:github_search/presentation/github_search_screen/widget/github_repository_list_widget.dart';
 import 'package:github_search/presentation/github_search_screen/widget/github_search_text_field_widget.dart';
+import 'package:github_search/utility/router/router_path.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class GitHubSearchView extends StatefulWidget {
@@ -41,7 +43,13 @@ class _GitHubSearchViewState extends State<GitHubSearchView> {
           ),
           Expanded(
             child: GitHubRepositoryListWidget(
-              list: Provider.of<GitHubSearchViewModel>(context).list
+              list: Provider.of<GitHubSearchViewModel>(context).list,
+              onTapCell: (indext) {
+                context.push(
+                  RoutePath.repositoryDetail.path,
+                  extra: Provider.of<GitHubSearchViewModel>(context, listen: false).list?.items[indext]
+                );
+              },
             )
           )
         ],
