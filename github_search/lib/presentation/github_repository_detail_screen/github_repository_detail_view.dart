@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/entity/github_repository.dart';
+import 'package:github_search/presentation/github_repository_detail_screen/widget/repository_detail_body_widget.dart';
+import 'package:github_search/presentation/github_repository_detail_screen/widget/repository_detail_header_widget.dart';
 
 class GitHubRepisitoryDetailView extends StatefulWidget {
   const GitHubRepisitoryDetailView({
@@ -20,12 +22,17 @@ class _GitHubRepisitoryDetailViewState extends State<GitHubRepisitoryDetailView>
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(widget.repository.fullName ?? "", style: Theme.of(context).textTheme.headlineSmall),
-            Text(widget.repository.description ?? "", style: Theme.of(context).textTheme.headlineSmall),
-          ],
+        child: Container(
+          color: Colors.grey.withAlpha(50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 25),
+              RepositoryDetailHeaderWidget(repository: widget.repository),
+              const SizedBox(height: 25),
+              RepositoryDetailBodyWidget(repository: widget.repository)
+            ],
+          ),
         )
       ),
     );
