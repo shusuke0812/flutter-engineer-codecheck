@@ -17,7 +17,9 @@ class GitHubSearchRequest extends RequestInterface {
   HTTPMethod method = HTTPMethod.get;
 
   @override
-  String path = "/search/repositories";
+  String get path {
+    return "/search/repositories";
+  }
 
   @override
   Future<Map<String, String>> parameters() async {

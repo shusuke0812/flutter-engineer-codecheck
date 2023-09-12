@@ -2,7 +2,7 @@ import '../http_method.dart';
 
 abstract class RequestInterface {
   abstract String baseURL;
-  abstract String path;
+  String get path;
   abstract HTTPMethod method;
 
   Future<Map<String, String>> parameters() async => {};
