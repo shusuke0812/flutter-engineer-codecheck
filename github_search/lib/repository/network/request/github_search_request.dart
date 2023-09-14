@@ -22,7 +22,7 @@ class GitHubSearchRequest extends RequestInterface {
   }
 
   @override
-  Future<Map<String, String>> parameters() async {
+  Future<Map<String, String>?> parameters() async {
     return {
       'q': searchWord,
       'per_page': '$searchCount',
