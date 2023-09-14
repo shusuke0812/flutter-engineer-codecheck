@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/repository/github_readme_repository.dart';
-import 'package:github_search/utility/logger.dart';
 
-class GitHubRepositoryDetalViewModel with ChangeNotifier {
-  GitHubRepositoryDetalViewModel({required this.githubReadmeRepository});
+class GitHubRepositoryDetailViewModel with ChangeNotifier {
+  GitHubRepositoryDetailViewModel({required this.githubReadmeRepository});
 
   final GitHubReadmeRepository githubReadmeRepository;
 
@@ -23,7 +22,6 @@ class GitHubRepositoryDetalViewModel with ChangeNotifier {
     final result = await githubReadmeRepository.getReadme(ownerName: ownerName, repositoryName: repositoryName);
     result.when(
       success: (data) {
-        logger.d("response=$data");
         _htmlUrl = data.htmlUrl;
         notifyListeners();
       }, 
