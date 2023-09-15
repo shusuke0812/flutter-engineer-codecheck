@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:github_search/presentation/github_repository_detail_screen/github_repository_detail_viewmodel.dart';
-import 'package:github_search/utility/logger.dart';
 import 'package:github_search/utility/webview_controller_factory.dart';
 import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:github_search/entity/github_repository.dart';
 import 'package:github_search/presentation/github_repository_detail_screen/widget/repository_detail_body_widget.dart';
 import 'package:github_search/presentation/github_repository_detail_screen/widget/repository_detail_header_widget.dart';
@@ -42,7 +40,13 @@ class _GitHubRepisitoryDetailViewState extends State<GitHubRepisitoryDetailView>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              RepositoryDetailHeaderWidget(repository: widget.repository),
+              RepositoryDetailHeaderWidget(
+                repository: widget.repository,
+                onTapHomePageUrl: (homaPageUrl) {
+                  final url = Uri.parse(homaPageUrl);
+                  launchUrl(url);
+                },
+              ),
               const SizedBox(height: 20),
               RepositoryDetailBodyWidget(repository: widget.repository),
               const SizedBox(height: 20),

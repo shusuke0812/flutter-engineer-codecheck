@@ -6,9 +6,11 @@ class RepositoryDetailHeaderWidget extends StatelessWidget {
   const RepositoryDetailHeaderWidget({
     super.key,
     required this.repository,
+    required this.onTapHomePageUrl
   });
 
   final GitHubRepository repository;
+  final Function(String) onTapHomePageUrl;
 
   Widget languageCircle(Color color) {
     return Container(
@@ -62,7 +64,7 @@ class RepositoryDetailHeaderWidget extends StatelessWidget {
                 TextButton(
                   child: Text(repository.homePage ?? "-", style: const TextStyle(fontSize: 17, color: Colors.blue)),
                   onPressed: () {
-                    // TODO: open web page
+                    onTapHomePageUrl(repository.homePage ?? "");
                   },
                 )
               ],
