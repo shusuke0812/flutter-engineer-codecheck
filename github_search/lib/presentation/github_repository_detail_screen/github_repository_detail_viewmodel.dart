@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/repository/github_readme_repository.dart';
+import 'package:github_search/utility/logger.dart';
 
 class GitHubRepositoryDetailViewModel with ChangeNotifier {
   GitHubRepositoryDetailViewModel({required this.githubReadmeRepository});
@@ -7,7 +8,7 @@ class GitHubRepositoryDetailViewModel with ChangeNotifier {
   final GitHubReadmeRepository githubReadmeRepository;
 
   // Success notify values
-  String _htmlUrl = "";
+  String _htmlUrl = "https://flutter.dev/";
   String get htmlUrl {
     return _htmlUrl;
   }
@@ -23,6 +24,7 @@ class GitHubRepositoryDetailViewModel with ChangeNotifier {
     result.when(
       success: (data) {
         _htmlUrl = data.htmlUrl;
+        logger.d("url=$_htmlUrl");
         notifyListeners();
       }, 
       error: (error) {
