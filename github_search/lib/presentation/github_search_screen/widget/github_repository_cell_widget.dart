@@ -13,7 +13,7 @@ class GitHubRepositoryCellWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            repository?.name ?? "", 
+            repository?.fullName ?? "", 
             style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,

@@ -26,7 +26,7 @@ class APIService {
 
   Future<http.Request> _build(RequestInterface request) async {
     final Map<String, String> header = await request.header();
-    final Map<String, String> parameters = await request.parameters();
+    final Map<String, String>? parameters = await request.parameters();
     final Map<String, dynamic> body = await request.body();
 
     Uri url = Uri.https(request.baseURL, request.path, parameters);

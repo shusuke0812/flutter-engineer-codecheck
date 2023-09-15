@@ -18,6 +18,9 @@ dependencies:
   logger: ^2.0.1
   provider: ^6.0.5
   font_awesome_flutter: ^10.4.0
+  go_router: ^10.1.2
+  webview_flutter: ^4.2.2
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_test:

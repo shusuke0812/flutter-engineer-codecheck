@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_search/entity/github_repository_list.dart';
-import 'package:github_search/logger.dart';
+import 'package:github_search/utility/logger.dart';
 import 'package:github_search/repository/github_search_repository.dart';
 
 class GitHubSearchViewModel with ChangeNotifier {

@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:github_search/entity/github_repository_list.dart';
-import 'package:github_search/logger.dart';
 import 'package:github_search/repository/network/api_service.dart';
 import 'package:github_search/repository/network/request/github_search_request.dart';
 
