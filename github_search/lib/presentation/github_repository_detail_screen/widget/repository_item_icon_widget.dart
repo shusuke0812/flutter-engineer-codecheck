@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search/presentation/github_repository_detail_screen/model/repository_item_icon.dart';
 
 class RepositoryItemIconWidget extends StatelessWidget {
@@ -13,6 +14,7 @@ class RepositoryItemIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
+      clipBehavior: Clip.antiAlias,
       children: [
         Container(
           alignment: Alignment.center,
@@ -23,7 +25,7 @@ class RepositoryItemIconWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(6),
           ),
         ),
-        Icon(
+        FaIcon(
           icon.icon, 
           size: 15, 
           color: Colors.white
