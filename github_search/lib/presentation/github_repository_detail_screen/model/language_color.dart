@@ -17,7 +17,7 @@ enum LanguageColor {
   go,
   php,
   shell,
-  other
+  other; // NOTE: must add `;` in last code
 
   factory LanguageColor.from(String language) {
     switch (language) {
