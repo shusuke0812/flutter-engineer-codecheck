@@ -18,8 +18,8 @@ class RepositoryItemIconWidget extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.center,
-          width: 25,
-          height: 25,
+          width: 24,
+          height: 24,
           decoration: BoxDecoration(
             color: icon.color,
             borderRadius: BorderRadius.circular(6),
@@ -27,7 +27,7 @@ class RepositoryItemIconWidget extends StatelessWidget {
         ),
         FaIcon(
           icon.icon, 
-          size: 15, 
+          size: 12, 
           color: Colors.white
         )
       ],
