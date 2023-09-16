@@ -5,6 +5,7 @@ enum LanguageColor {
   swift,
   cpp,
   cn,
+  cs,
   objectiveC,
   javaSctipt,
   typeScript,
@@ -27,8 +28,10 @@ enum LanguageColor {
         return LanguageColor.swift;
       case 'C++':
         return LanguageColor.cpp;
-      case 'C#':
+      case 'C':
         return LanguageColor.cn;
+      case 'C#':
+        return LanguageColor.cs;
       case 'Objective-C':
         return LanguageColor.objectiveC;
       case 'JavaScript':
@@ -81,5 +84,5 @@ extension LanguageColorExtension on LanguageColor {
     LanguageColor.other: const Color(0xff586069)
   };
 
-  Color get color => colors[this];
+  Color get color => colors[this]!;
 }
