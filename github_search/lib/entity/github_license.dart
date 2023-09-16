@@ -6,9 +6,9 @@ part 'github_license.g.dart';
 @freezed
 class GitHubLicense with _$GitHubLicense {
   const factory GitHubLicense({
-    String? key,
-    String? name,
-    String? urlString
+    required String key,
+    required String? name,
+    @JsonKey(name: 'url') required String? urlString
   }) = _GitHubLicense;
 
   factory GitHubLicense.fromJson(Map<String, dynamic> json) => _$GitHubLicenseFromJson(json);

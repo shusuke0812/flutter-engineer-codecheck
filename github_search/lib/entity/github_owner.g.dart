@@ -8,8 +8,8 @@ part of 'github_owner.dart';
 
 _$_GitHubOwner _$$_GitHubOwnerFromJson(Map<String, dynamic> json) =>
     _$_GitHubOwner(
-      login: json['login'] as String?,
-      avatarUrlString: json['avatar_url'] as String?,
+      login: json['login'] as String,
+      avatarUrlString: json['avatar_url'] as String,
     );
 
 Map<String, dynamic> _$$_GitHubOwnerToJson(_$_GitHubOwner instance) =>

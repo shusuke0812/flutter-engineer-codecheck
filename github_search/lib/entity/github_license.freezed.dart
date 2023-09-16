@@ -20,8 +20,9 @@ GitHubLicense _$GitHubLicenseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GitHubLicense {
-  String? get key => throw _privateConstructorUsedError;
+  String get key => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'url')
   String? get urlString => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +37,8 @@ abstract class $GitHubLicenseCopyWith<$Res> {
           GitHubLicense value, $Res Function(GitHubLicense) then) =
       _$GitHubLicenseCopyWithImpl<$Res, GitHubLicense>;
   @useResult
-  $Res call({String? key, String? name, String? urlString});
+  $Res call(
+      {String key, String? name, @JsonKey(name: 'url') String? urlString});
 }
 
 /// @nodoc
@@ -52,15 +54,15 @@ class _$GitHubLicenseCopyWithImpl<$Res, $Val extends GitHubLicense>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
+    Object? key = null,
     Object? name = freezed,
     Object? urlString = freezed,
   }) {
     return _then(_value.copyWith(
-      key: freezed == key
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -81,7 +83,8 @@ abstract class _$$_GitHubLicenseCopyWith<$Res>
       __$$_GitHubLicenseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? key, String? name, String? urlString});
+  $Res call(
+      {String key, String? name, @JsonKey(name: 'url') String? urlString});
 }
 
 /// @nodoc
@@ -95,15 +98,15 @@ class __$$_GitHubLicenseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
+    Object? key = null,
     Object? name = freezed,
     Object? urlString = freezed,
   }) {
     return _then(_$_GitHubLicense(
-      key: freezed == key
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -119,16 +122,20 @@ class __$$_GitHubLicenseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_GitHubLicense implements _GitHubLicense {
-  const _$_GitHubLicense({this.key, this.name, this.urlString});
+  const _$_GitHubLicense(
+      {required this.key,
+      required this.name,
+      @JsonKey(name: 'url') required this.urlString});
 
   factory _$_GitHubLicense.fromJson(Map<String, dynamic> json) =>
       _$$_GitHubLicenseFromJson(json);
 
   @override
-  final String? key;
+  final String key;
   @override
   final String? name;
   @override
+  @JsonKey(name: 'url')
   final String? urlString;
 
   @override
@@ -167,18 +174,20 @@ class _$_GitHubLicense implements _GitHubLicense {
 
 abstract class _GitHubLicense implements GitHubLicense {
   const factory _GitHubLicense(
-      {final String? key,
-      final String? name,
-      final String? urlString}) = _$_GitHubLicense;
+          {required final String key,
+          required final String? name,
+          @JsonKey(name: 'url') required final String? urlString}) =
+      _$_GitHubLicense;
 
   factory _GitHubLicense.fromJson(Map<String, dynamic> json) =
       _$_GitHubLicense.fromJson;
 
   @override
-  String? get key;
+  String get key;
   @override
   String? get name;
   @override
+  @JsonKey(name: 'url')
   String? get urlString;
   @override
   @JsonKey(ignore: true)

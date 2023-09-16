@@ -8,14 +8,14 @@ part of 'github_license.dart';
 
 _$_GitHubLicense _$$_GitHubLicenseFromJson(Map<String, dynamic> json) =>
     _$_GitHubLicense(
-      key: json['key'] as String?,
+      key: json['key'] as String,
       name: json['name'] as String?,
-      urlString: json['urlString'] as String?,
+      urlString: json['url'] as String?,
     );
 
 Map<String, dynamic> _$$_GitHubLicenseToJson(_$_GitHubLicense instance) =>
     <String, dynamic>{
       'key': instance.key,
       'name': instance.name,
-      'urlString': instance.urlString,
+      'url': instance.urlString,
     };

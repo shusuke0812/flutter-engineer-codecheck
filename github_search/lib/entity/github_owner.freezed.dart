@@ -20,9 +20,9 @@ GitHubOwner _$GitHubOwnerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GitHubOwner {
-  String? get login => throw _privateConstructorUsedError;
+  String get login => throw _privateConstructorUsedError;
   @JsonKey(name: 'avatar_url')
-  String? get avatarUrlString => throw _privateConstructorUsedError;
+  String get avatarUrlString => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,7 @@ abstract class $GitHubOwnerCopyWith<$Res> {
       _$GitHubOwnerCopyWithImpl<$Res, GitHubOwner>;
   @useResult
   $Res call(
-      {String? login, @JsonKey(name: 'avatar_url') String? avatarUrlString});
+      {String login, @JsonKey(name: 'avatar_url') String avatarUrlString});
 }
 
 /// @nodoc
@@ -53,18 +53,18 @@ class _$GitHubOwnerCopyWithImpl<$Res, $Val extends GitHubOwner>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? login = freezed,
-    Object? avatarUrlString = freezed,
+    Object? login = null,
+    Object? avatarUrlString = null,
   }) {
     return _then(_value.copyWith(
-      login: freezed == login
+      login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
-              as String?,
-      avatarUrlString: freezed == avatarUrlString
+              as String,
+      avatarUrlString: null == avatarUrlString
           ? _value.avatarUrlString
           : avatarUrlString // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -78,7 +78,7 @@ abstract class _$$_GitHubOwnerCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? login, @JsonKey(name: 'avatar_url') String? avatarUrlString});
+      {String login, @JsonKey(name: 'avatar_url') String avatarUrlString});
 }
 
 /// @nodoc
@@ -92,18 +92,18 @@ class __$$_GitHubOwnerCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? login = freezed,
-    Object? avatarUrlString = freezed,
+    Object? login = null,
+    Object? avatarUrlString = null,
   }) {
     return _then(_$_GitHubOwner(
-      login: freezed == login
+      login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
-              as String?,
-      avatarUrlString: freezed == avatarUrlString
+              as String,
+      avatarUrlString: null == avatarUrlString
           ? _value.avatarUrlString
           : avatarUrlString // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -112,16 +112,17 @@ class __$$_GitHubOwnerCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GitHubOwner implements _GitHubOwner {
   const _$_GitHubOwner(
-      {this.login, @JsonKey(name: 'avatar_url') this.avatarUrlString});
+      {required this.login,
+      @JsonKey(name: 'avatar_url') required this.avatarUrlString});
 
   factory _$_GitHubOwner.fromJson(Map<String, dynamic> json) =>
       _$$_GitHubOwnerFromJson(json);
 
   @override
-  final String? login;
+  final String login;
   @override
   @JsonKey(name: 'avatar_url')
-  final String? avatarUrlString;
+  final String avatarUrlString;
 
   @override
   String toString() {
@@ -158,18 +159,18 @@ class _$_GitHubOwner implements _GitHubOwner {
 
 abstract class _GitHubOwner implements GitHubOwner {
   const factory _GitHubOwner(
-          {final String? login,
-          @JsonKey(name: 'avatar_url') final String? avatarUrlString}) =
+          {required final String login,
+          @JsonKey(name: 'avatar_url') required final String avatarUrlString}) =
       _$_GitHubOwner;
 
   factory _GitHubOwner.fromJson(Map<String, dynamic> json) =
       _$_GitHubOwner.fromJson;
 
   @override
-  String? get login;
+  String get login;
   @override
   @JsonKey(name: 'avatar_url')
-  String? get avatarUrlString;
+  String get avatarUrlString;
   @override
   @JsonKey(ignore: true)
   _$$_GitHubOwnerCopyWith<_$_GitHubOwner> get copyWith =>

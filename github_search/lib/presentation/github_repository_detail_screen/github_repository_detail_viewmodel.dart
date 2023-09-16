@@ -23,9 +23,11 @@ class GitHubRepositoryDetailViewModel with ChangeNotifier {
     final result = await githubReadmeRepository.getReadme(ownerName: ownerName, repositoryName: repositoryName);
     result.when(
       success: (data) {
-        _htmlUrl = data.htmlUrl;
-        logger.d("url=$_htmlUrl");
-        notifyListeners();
+        if (data.htmlUrl != null) {
+          _htmlUrl = data.htmlUrl!;
+          logger.d("url=$_htmlUrl");
+          notifyListeners();
+        }
       }, 
       error: (error) {
         _errorMessage = "Not found README";

@@ -8,7 +8,7 @@ part of 'github_readme.dart';
 
 _$_GitHubReadme _$$_GitHubReadmeFromJson(Map<String, dynamic> json) =>
     _$_GitHubReadme(
-      htmlUrl: json['html_url'] as String,
+      htmlUrl: json['html_url'] as String?,
     );
 
 Map<String, dynamic> _$$_GitHubReadmeToJson(_$_GitHubReadme instance) =>

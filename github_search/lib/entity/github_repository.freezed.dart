@@ -20,18 +20,18 @@ GitHubRepository _$GitHubRepositoryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GitHubRepository {
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'full_name')
-  String? get fullName => throw _privateConstructorUsedError;
+  String get fullName => throw _privateConstructorUsedError;
   String? get language => throw _privateConstructorUsedError;
   @JsonKey(name: 'stargazers_count')
-  int? get starCount => throw _privateConstructorUsedError;
+  int get starCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'watchers_count')
-  int? get watchCount => throw _privateConstructorUsedError;
+  int get watchCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'forks_count')
-  int? get forkCount => throw _privateConstructorUsedError;
+  int get forkCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'open_issues_count')
-  int? get issueCount => throw _privateConstructorUsedError;
+  int get issueCount => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'homepage')
   String? get homePage => throw _privateConstructorUsedError;
@@ -51,13 +51,13 @@ abstract class $GitHubRepositoryCopyWith<$Res> {
       _$GitHubRepositoryCopyWithImpl<$Res, GitHubRepository>;
   @useResult
   $Res call(
-      {String? name,
-      @JsonKey(name: 'full_name') String? fullName,
+      {String name,
+      @JsonKey(name: 'full_name') String fullName,
       String? language,
-      @JsonKey(name: 'stargazers_count') int? starCount,
-      @JsonKey(name: 'watchers_count') int? watchCount,
-      @JsonKey(name: 'forks_count') int? forkCount,
-      @JsonKey(name: 'open_issues_count') int? issueCount,
+      @JsonKey(name: 'stargazers_count') int starCount,
+      @JsonKey(name: 'watchers_count') int watchCount,
+      @JsonKey(name: 'forks_count') int forkCount,
+      @JsonKey(name: 'open_issues_count') int issueCount,
       String? description,
       @JsonKey(name: 'homepage') String? homePage,
       GitHubOwner? owner,
@@ -80,47 +80,47 @@ class _$GitHubRepositoryCopyWithImpl<$Res, $Val extends GitHubRepository>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? fullName = freezed,
+    Object? name = null,
+    Object? fullName = null,
     Object? language = freezed,
-    Object? starCount = freezed,
-    Object? watchCount = freezed,
-    Object? forkCount = freezed,
-    Object? issueCount = freezed,
+    Object? starCount = null,
+    Object? watchCount = null,
+    Object? forkCount = null,
+    Object? issueCount = null,
     Object? description = freezed,
     Object? homePage = freezed,
     Object? owner = freezed,
     Object? license = freezed,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fullName: freezed == fullName
+              as String,
+      fullName: null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String?,
-      starCount: freezed == starCount
+      starCount: null == starCount
           ? _value.starCount
           : starCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      watchCount: freezed == watchCount
+              as int,
+      watchCount: null == watchCount
           ? _value.watchCount
           : watchCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      forkCount: freezed == forkCount
+              as int,
+      forkCount: null == forkCount
           ? _value.forkCount
           : forkCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      issueCount: freezed == issueCount
+              as int,
+      issueCount: null == issueCount
           ? _value.issueCount
           : issueCount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -174,13 +174,13 @@ abstract class _$$_GitHubRepositoryCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name,
-      @JsonKey(name: 'full_name') String? fullName,
+      {String name,
+      @JsonKey(name: 'full_name') String fullName,
       String? language,
-      @JsonKey(name: 'stargazers_count') int? starCount,
-      @JsonKey(name: 'watchers_count') int? watchCount,
-      @JsonKey(name: 'forks_count') int? forkCount,
-      @JsonKey(name: 'open_issues_count') int? issueCount,
+      @JsonKey(name: 'stargazers_count') int starCount,
+      @JsonKey(name: 'watchers_count') int watchCount,
+      @JsonKey(name: 'forks_count') int forkCount,
+      @JsonKey(name: 'open_issues_count') int issueCount,
       String? description,
       @JsonKey(name: 'homepage') String? homePage,
       GitHubOwner? owner,
@@ -203,47 +203,47 @@ class __$$_GitHubRepositoryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? fullName = freezed,
+    Object? name = null,
+    Object? fullName = null,
     Object? language = freezed,
-    Object? starCount = freezed,
-    Object? watchCount = freezed,
-    Object? forkCount = freezed,
-    Object? issueCount = freezed,
+    Object? starCount = null,
+    Object? watchCount = null,
+    Object? forkCount = null,
+    Object? issueCount = null,
     Object? description = freezed,
     Object? homePage = freezed,
     Object? owner = freezed,
     Object? license = freezed,
   }) {
     return _then(_$_GitHubRepository(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fullName: freezed == fullName
+              as String,
+      fullName: null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       language: freezed == language
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as String?,
-      starCount: freezed == starCount
+      starCount: null == starCount
           ? _value.starCount
           : starCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      watchCount: freezed == watchCount
+              as int,
+      watchCount: null == watchCount
           ? _value.watchCount
           : watchCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      forkCount: freezed == forkCount
+              as int,
+      forkCount: null == forkCount
           ? _value.forkCount
           : forkCount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      issueCount: freezed == issueCount
+              as int,
+      issueCount: null == issueCount
           ? _value.issueCount
           : issueCount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -268,40 +268,40 @@ class __$$_GitHubRepositoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GitHubRepository implements _GitHubRepository {
   const _$_GitHubRepository(
-      {this.name,
-      @JsonKey(name: 'full_name') this.fullName,
-      this.language,
-      @JsonKey(name: 'stargazers_count') this.starCount,
-      @JsonKey(name: 'watchers_count') this.watchCount,
-      @JsonKey(name: 'forks_count') this.forkCount,
-      @JsonKey(name: 'open_issues_count') this.issueCount,
-      this.description,
-      @JsonKey(name: 'homepage') this.homePage,
-      this.owner,
-      this.license});
+      {required this.name,
+      @JsonKey(name: 'full_name') required this.fullName,
+      required this.language,
+      @JsonKey(name: 'stargazers_count') required this.starCount,
+      @JsonKey(name: 'watchers_count') required this.watchCount,
+      @JsonKey(name: 'forks_count') required this.forkCount,
+      @JsonKey(name: 'open_issues_count') required this.issueCount,
+      required this.description,
+      @JsonKey(name: 'homepage') required this.homePage,
+      required this.owner,
+      required this.license});
 
   factory _$_GitHubRepository.fromJson(Map<String, dynamic> json) =>
       _$$_GitHubRepositoryFromJson(json);
 
   @override
-  final String? name;
+  final String name;
   @override
   @JsonKey(name: 'full_name')
-  final String? fullName;
+  final String fullName;
   @override
   final String? language;
   @override
   @JsonKey(name: 'stargazers_count')
-  final int? starCount;
+  final int starCount;
   @override
   @JsonKey(name: 'watchers_count')
-  final int? watchCount;
+  final int watchCount;
   @override
   @JsonKey(name: 'forks_count')
-  final int? forkCount;
+  final int forkCount;
   @override
   @JsonKey(name: 'open_issues_count')
-  final int? issueCount;
+  final int issueCount;
   @override
   final String? description;
   @override
@@ -375,40 +375,40 @@ class _$_GitHubRepository implements _GitHubRepository {
 
 abstract class _GitHubRepository implements GitHubRepository {
   const factory _GitHubRepository(
-      {final String? name,
-      @JsonKey(name: 'full_name') final String? fullName,
-      final String? language,
-      @JsonKey(name: 'stargazers_count') final int? starCount,
-      @JsonKey(name: 'watchers_count') final int? watchCount,
-      @JsonKey(name: 'forks_count') final int? forkCount,
-      @JsonKey(name: 'open_issues_count') final int? issueCount,
-      final String? description,
-      @JsonKey(name: 'homepage') final String? homePage,
-      final GitHubOwner? owner,
-      final GitHubLicense? license}) = _$_GitHubRepository;
+      {required final String name,
+      @JsonKey(name: 'full_name') required final String fullName,
+      required final String? language,
+      @JsonKey(name: 'stargazers_count') required final int starCount,
+      @JsonKey(name: 'watchers_count') required final int watchCount,
+      @JsonKey(name: 'forks_count') required final int forkCount,
+      @JsonKey(name: 'open_issues_count') required final int issueCount,
+      required final String? description,
+      @JsonKey(name: 'homepage') required final String? homePage,
+      required final GitHubOwner? owner,
+      required final GitHubLicense? license}) = _$_GitHubRepository;
 
   factory _GitHubRepository.fromJson(Map<String, dynamic> json) =
       _$_GitHubRepository.fromJson;
 
   @override
-  String? get name;
+  String get name;
   @override
   @JsonKey(name: 'full_name')
-  String? get fullName;
+  String get fullName;
   @override
   String? get language;
   @override
   @JsonKey(name: 'stargazers_count')
-  int? get starCount;
+  int get starCount;
   @override
   @JsonKey(name: 'watchers_count')
-  int? get watchCount;
+  int get watchCount;
   @override
   @JsonKey(name: 'forks_count')
-  int? get forkCount;
+  int get forkCount;
   @override
   @JsonKey(name: 'open_issues_count')
-  int? get issueCount;
+  int get issueCount;
   @override
   String? get description;
   @override

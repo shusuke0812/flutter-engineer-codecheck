@@ -10,7 +10,7 @@ _$_GitHubRepositoryList _$$_GitHubRepositoryListFromJson(
         Map<String, dynamic> json) =>
     _$_GitHubRepositoryList(
       totalCount: json['total_count'] as int,
-      incompleteResults: json['incomplete_results'] as bool?,
+      incompleteResults: json['incomplete_results'] as bool,
       items: (json['items'] as List<dynamic>)
           .map((e) => GitHubRepository.fromJson(e as Map<String, dynamic>))
           .toList(),

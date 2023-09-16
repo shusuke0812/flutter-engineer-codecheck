@@ -8,13 +8,13 @@ part of 'github_repository.dart';
 
 _$_GitHubRepository _$$_GitHubRepositoryFromJson(Map<String, dynamic> json) =>
     _$_GitHubRepository(
-      name: json['name'] as String?,
-      fullName: json['full_name'] as String?,
+      name: json['name'] as String,
+      fullName: json['full_name'] as String,
       language: json['language'] as String?,
-      starCount: json['stargazers_count'] as int?,
-      watchCount: json['watchers_count'] as int?,
-      forkCount: json['forks_count'] as int?,
-      issueCount: json['open_issues_count'] as int?,
+      starCount: json['stargazers_count'] as int,
+      watchCount: json['watchers_count'] as int,
+      forkCount: json['forks_count'] as int,
+      issueCount: json['open_issues_count'] as int,
       description: json['description'] as String?,
       homePage: json['homepage'] as String?,
       owner: json['owner'] == null

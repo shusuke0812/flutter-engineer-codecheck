@@ -9,7 +9,7 @@ part 'github_repository_list.g.dart';
 class GitHubRepositoryList with _$GitHubRepositoryList {
   const factory GitHubRepositoryList({
     @JsonKey(name: 'total_count') required int totalCount,
-    @JsonKey(name: 'incomplete_results') bool? incompleteResults,
+    @JsonKey(name: 'incomplete_results') required bool incompleteResults,
     required List<GitHubRepository> items,
   }) = _GitHubRepositoryList;
 

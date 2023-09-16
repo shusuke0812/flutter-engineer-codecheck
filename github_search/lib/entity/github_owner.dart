@@ -6,8 +6,8 @@ part 'github_owner.g.dart';
 @freezed
 class GitHubOwner with _$GitHubOwner {
   const factory GitHubOwner({
-    String? login,
-    @JsonKey(name: 'avatar_url') String? avatarUrlString
+    required String login,
+    @JsonKey(name: 'avatar_url') required String avatarUrlString
   }) = _GitHubOwner;
 
   factory GitHubOwner.fromJson(Map<String, dynamic> json) => _$GitHubOwnerFromJson(json);

@@ -21,7 +21,7 @@ GitHubReadme _$GitHubReadmeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GitHubReadme {
   @JsonKey(name: 'html_url')
-  String get htmlUrl => throw _privateConstructorUsedError;
+  String? get htmlUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $GitHubReadmeCopyWith<$Res> {
           GitHubReadme value, $Res Function(GitHubReadme) then) =
       _$GitHubReadmeCopyWithImpl<$Res, GitHubReadme>;
   @useResult
-  $Res call({@JsonKey(name: 'html_url') String htmlUrl});
+  $Res call({@JsonKey(name: 'html_url') String? htmlUrl});
 }
 
 /// @nodoc
@@ -51,13 +51,13 @@ class _$GitHubReadmeCopyWithImpl<$Res, $Val extends GitHubReadme>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? htmlUrl = null,
+    Object? htmlUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      htmlUrl: null == htmlUrl
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -70,7 +70,7 @@ abstract class _$$_GitHubReadmeCopyWith<$Res>
       __$$_GitHubReadmeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'html_url') String htmlUrl});
+  $Res call({@JsonKey(name: 'html_url') String? htmlUrl});
 }
 
 /// @nodoc
@@ -84,13 +84,13 @@ class __$$_GitHubReadmeCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? htmlUrl = null,
+    Object? htmlUrl = freezed,
   }) {
     return _then(_$_GitHubReadme(
-      htmlUrl: null == htmlUrl
+      htmlUrl: freezed == htmlUrl
           ? _value.htmlUrl
           : htmlUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -105,7 +105,7 @@ class _$_GitHubReadme implements _GitHubReadme {
 
   @override
   @JsonKey(name: 'html_url')
-  final String htmlUrl;
+  final String? htmlUrl;
 
   @override
   String toString() {
@@ -140,7 +140,7 @@ class _$_GitHubReadme implements _GitHubReadme {
 
 abstract class _GitHubReadme implements GitHubReadme {
   const factory _GitHubReadme(
-          {@JsonKey(name: 'html_url') required final String htmlUrl}) =
+          {@JsonKey(name: 'html_url') required final String? htmlUrl}) =
       _$_GitHubReadme;
 
   factory _GitHubReadme.fromJson(Map<String, dynamic> json) =
@@ -148,7 +148,7 @@ abstract class _GitHubReadme implements GitHubReadme {
 
   @override
   @JsonKey(name: 'html_url')
-  String get htmlUrl;
+  String? get htmlUrl;
   @override
   @JsonKey(ignore: true)
   _$$_GitHubReadmeCopyWith<_$_GitHubReadme> get copyWith =>

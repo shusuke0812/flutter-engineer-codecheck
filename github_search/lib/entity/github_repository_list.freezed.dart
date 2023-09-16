@@ -23,7 +23,7 @@ mixin _$GitHubRepositoryList {
   @JsonKey(name: 'total_count')
   int get totalCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'incomplete_results')
-  bool? get incompleteResults => throw _privateConstructorUsedError;
+  bool get incompleteResults => throw _privateConstructorUsedError;
   List<GitHubRepository> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $GitHubRepositoryListCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: 'total_count') int totalCount,
-      @JsonKey(name: 'incomplete_results') bool? incompleteResults,
+      @JsonKey(name: 'incomplete_results') bool incompleteResults,
       List<GitHubRepository> items});
 }
 
@@ -59,7 +59,7 @@ class _$GitHubRepositoryListCopyWithImpl<$Res,
   @override
   $Res call({
     Object? totalCount = null,
-    Object? incompleteResults = freezed,
+    Object? incompleteResults = null,
     Object? items = null,
   }) {
     return _then(_value.copyWith(
@@ -67,10 +67,10 @@ class _$GitHubRepositoryListCopyWithImpl<$Res,
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
               as int,
-      incompleteResults: freezed == incompleteResults
+      incompleteResults: null == incompleteResults
           ? _value.incompleteResults
           : incompleteResults // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -89,7 +89,7 @@ abstract class _$$_GitHubRepositoryListCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: 'total_count') int totalCount,
-      @JsonKey(name: 'incomplete_results') bool? incompleteResults,
+      @JsonKey(name: 'incomplete_results') bool incompleteResults,
       List<GitHubRepository> items});
 }
 
@@ -105,7 +105,7 @@ class __$$_GitHubRepositoryListCopyWithImpl<$Res>
   @override
   $Res call({
     Object? totalCount = null,
-    Object? incompleteResults = freezed,
+    Object? incompleteResults = null,
     Object? items = null,
   }) {
     return _then(_$_GitHubRepositoryList(
@@ -113,10 +113,10 @@ class __$$_GitHubRepositoryListCopyWithImpl<$Res>
           ? _value.totalCount
           : totalCount // ignore: cast_nullable_to_non_nullable
               as int,
-      incompleteResults: freezed == incompleteResults
+      incompleteResults: null == incompleteResults
           ? _value.incompleteResults
           : incompleteResults // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -130,7 +130,7 @@ class __$$_GitHubRepositoryListCopyWithImpl<$Res>
 class _$_GitHubRepositoryList implements _GitHubRepositoryList {
   const _$_GitHubRepositoryList(
       {@JsonKey(name: 'total_count') required this.totalCount,
-      @JsonKey(name: 'incomplete_results') this.incompleteResults,
+      @JsonKey(name: 'incomplete_results') required this.incompleteResults,
       required final List<GitHubRepository> items})
       : _items = items;
 
@@ -142,7 +142,7 @@ class _$_GitHubRepositoryList implements _GitHubRepositoryList {
   final int totalCount;
   @override
   @JsonKey(name: 'incomplete_results')
-  final bool? incompleteResults;
+  final bool incompleteResults;
   final List<GitHubRepository> _items;
   @override
   List<GitHubRepository> get items {
@@ -191,7 +191,8 @@ class _$_GitHubRepositoryList implements _GitHubRepositoryList {
 abstract class _GitHubRepositoryList implements GitHubRepositoryList {
   const factory _GitHubRepositoryList(
       {@JsonKey(name: 'total_count') required final int totalCount,
-      @JsonKey(name: 'incomplete_results') final bool? incompleteResults,
+      @JsonKey(name: 'incomplete_results')
+      required final bool incompleteResults,
       required final List<GitHubRepository> items}) = _$_GitHubRepositoryList;
 
   factory _GitHubRepositoryList.fromJson(Map<String, dynamic> json) =
@@ -202,7 +203,7 @@ abstract class _GitHubRepositoryList implements GitHubRepositoryList {
   int get totalCount;
   @override
   @JsonKey(name: 'incomplete_results')
-  bool? get incompleteResults;
+  bool get incompleteResults;
   @override
   List<GitHubRepository> get items;
   @override
