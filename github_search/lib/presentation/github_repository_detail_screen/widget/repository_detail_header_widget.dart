@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search/entity/github_repository.dart';
+import 'package:github_search/presentation/github_repository_detail_screen/model/language_color.dart';
 
 class RepositoryDetailHeaderWidget extends StatelessWidget {
   const RepositoryDetailHeaderWidget({
@@ -12,12 +13,12 @@ class RepositoryDetailHeaderWidget extends StatelessWidget {
   final GitHubRepository repository;
   final Function(String) onTapHomePageUrl;
 
-  Widget languageCircle(Color color) {
+  Widget languageCircle(String lang) {
     return Container(
       width: 15,
       height: 15,
       decoration: BoxDecoration(
-        color: color,
+        color: LanguageColor.from(lang).color,
         shape: BoxShape.circle
       ),
     );
@@ -73,7 +74,7 @@ class RepositoryDetailHeaderWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                languageCircle(Colors.red), // TODO: set language color
+                languageCircle(repository.language ?? ""), // TODO: set language color
                 const SizedBox(width: 16),
                 Text(repository.language ?? "", style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w400))
               ],
