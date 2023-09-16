@@ -80,4 +80,6 @@ extension LanguageColorExtension on LanguageColor {
     LanguageColor.shell: const Color(0xff89e051),
     LanguageColor.other: const Color(0xff586069)
   };
+
+  Color get color => colors[this];
 }
