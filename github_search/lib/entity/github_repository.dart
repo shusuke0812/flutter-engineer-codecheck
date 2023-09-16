@@ -7,6 +7,11 @@ import 'github_license.dart';
 part 'github_repository.freezed.dart';
 part 'github_repository.g.dart';
 
+// NOTE: 
+// Watch count is Incorrect value. 🔥
+// Must use `subscribers_count` of Get a repository API. 
+// Ref is here. (https://github.com/octokit/octokit.net/issues/1510)
+
 @freezed
 class GitHubRepository with _$GitHubRepository {
   const factory GitHubRepository({
