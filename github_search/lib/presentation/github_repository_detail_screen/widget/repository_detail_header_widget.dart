@@ -43,7 +43,7 @@ class RepositoryDetailHeaderWidget extends StatelessWidget {
                 ),
                 const SizedBox(width: 16),
                 Text(
-                  repository.name ?? "",
+                  repository.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(

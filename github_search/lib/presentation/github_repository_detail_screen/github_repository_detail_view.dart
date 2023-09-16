@@ -25,7 +25,7 @@ class _GitHubRepisitoryDetailViewState extends State<GitHubRepisitoryDetailView>
 
   Future<void> _loadReadmeUrl() async {
     await Provider.of<GitHubRepositoryDetailViewModel>(context, listen: false).loadRepositoryReadme(
-      widget.repository.owner?.login ?? "", widget.repository.name ?? ""
+      widget.repository.owner?.login ?? "", widget.repository.name
     );
   }
   
