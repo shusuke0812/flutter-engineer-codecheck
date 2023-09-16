@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'github_owner.dart';
@@ -23,4 +24,27 @@ class GitHubRepository with _$GitHubRepository {
   }) = _GitHubRepository;
 
   factory GitHubRepository.fromJson(Map<String, dynamic> json) => _$GitHubRepositoryFromJson(json);
+}
+
+extension GitHubRepositoryExtension on GitHubRepository {
+  String toWithSeparated(int value) {
+    final formatter = NumberFormat("#,###");
+    return formatter.format(value);
+  }
+
+  String get starCountWithComma {
+    return toWithSeparated(starCount);
+  }
+
+  String get watchCountWithComma {
+    return toWithSeparated(watchCount);
+  }
+
+  String get forkCountWithComma {
+    return toWithSeparated(forkCount);
+  }
+
+  String get issueCountWithComma {
+    return toWithSeparated(issueCount);
+  }
 }
