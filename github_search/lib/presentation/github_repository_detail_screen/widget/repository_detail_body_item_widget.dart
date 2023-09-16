@@ -18,13 +18,13 @@ class RepositoryDetailBodyItemWidget extends StatelessWidget {
   Widget countText(RepositoryItemIcon icon) {
     switch (icon) {
       case RepositoryItemIcon.stars:
-        return Text("${repository.starCount}");
+        return Text(repository.starCountWithComma);
       case RepositoryItemIcon.watchers:
-        return Text("${repository.watchCount}");
+        return Text(repository.watchCountWithComma);
       case RepositoryItemIcon.forks:
-        return Text("${repository.forkCount}");
+        return Text(repository.forkCountWithComma);
       case RepositoryItemIcon.issues:
-        return Text("${repository.issueCount}");
+        return Text(repository.issueCountWithComma);
       case RepositoryItemIcon.license:
         logger.d("${repository.license}");
         return Text("${repository.license?.displayName()}", overflow: TextOverflow.ellipsis, maxLines: 1);
