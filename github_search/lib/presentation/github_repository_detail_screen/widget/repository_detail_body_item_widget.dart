@@ -10,12 +10,10 @@ class RepositoryDetailBodyItemWidget extends StatelessWidget {
     super.key,
     required this.repository,
     required this.icon,
-    this.itemHeight = 30,
   });
 
   final GitHubRepository repository;
   final RepositoryItemIcon icon;
-  final double itemHeight;
 
   Widget countText(RepositoryItemIcon icon) {
     switch (icon) {
@@ -36,7 +34,6 @@ class RepositoryDetailBodyItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: itemHeight,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

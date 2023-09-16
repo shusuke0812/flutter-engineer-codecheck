@@ -13,23 +13,34 @@ class RepositoryDetailBodyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double itemHeight = 30;
+    const double dividerHeight = 15;
+    const double padding = 16;
+
     return Container(
       color: Colors.white,
       alignment: Alignment.center,
+      height: itemHeight * RepositoryItemIcon.values.length + dividerHeight * (RepositoryItemIcon.values.length - 1) + padding * 2,
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(padding),
         child: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
-            return InkWell(
+            return SizedBox(
+              height: itemHeight,
+              child: InkWell(
               onTap: null,
               child: RepositoryDetailBodyItemWidget(
                 icon: RepositoryItemIcon.values[index],
                 repository: repository,
               ),
+            ),
             );
           }, 
           separatorBuilder: (context, indext) {
-            return const Divider();
+            return const Divider(
+              height: dividerHeight,
+              thickness: 0.5,
+            );
           }, 
           itemCount: RepositoryItemIcon.values.length,
           physics: const NeverScrollableScrollPhysics(),
