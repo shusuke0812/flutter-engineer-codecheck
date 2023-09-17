@@ -16,10 +16,14 @@ class RepositoryReadmeRequest extends RequestInterface {
   final String ownerName;
 
   @override
-  String baseURL = Constant.githubBaseUrl;
+  String get baseURL {
+    return Constant.githubBaseUrl;
+  }
 
   @override
-  HTTPMethod method = HTTPMethod.get;
+  HTTPMethod get method {
+    return HTTPMethod.get;
+  }
 
   @override
   String get path { return "/repos/$ownerName/$repositoryName/readme"; }

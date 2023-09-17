@@ -1,9 +1,9 @@
 import '../http_method.dart';
 
 abstract class RequestInterface {
-  abstract String baseURL;
+  String get baseURL;
   String get path;
-  abstract HTTPMethod method;
+  HTTPMethod get method;
 
   Future<Map<String, String>?> parameters() async => { };
   Future<Map<String, dynamic>> body() async => {};
