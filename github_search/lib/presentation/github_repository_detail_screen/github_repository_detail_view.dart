@@ -28,6 +28,12 @@ class _GitHubRepisitoryDetailViewState extends State<GitHubRepisitoryDetailView>
       widget.repository.owner?.login ?? "", widget.repository.name
     );
   }
+
+  Future<void> _loadSubscribersCount() async {
+    await Provider.of<GitHubRepositoryDetailViewModel>(context, listen: false).loadSubscribersCount(
+      widget.repository.fullName
+    );
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -48,7 +54,15 @@ class _GitHubRepisitoryDetailViewState extends State<GitHubRepisitoryDetailView>
                 },
               ),
               const SizedBox(height: 20),
-              RepositoryDetailBodyWidget(repository: widget.repository),
+              FutureBuilder(
+                future: _loadSubscribersCount(),
+                builder: (context, snapshot) {
+                  return RepositoryDetailBodyWidget(
+                    repository: widget.repository,
+                    getRepository: Provider.of<GitHubRepositoryDetailViewModel>(context).getRepository,
+                  );
+                }
+              ),
               const SizedBox(height: 20),
               FutureBuilder(
                 future: _loadReadmeUrl(),

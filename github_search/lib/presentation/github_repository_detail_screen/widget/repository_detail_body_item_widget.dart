@@ -10,9 +10,11 @@ class RepositoryDetailBodyItemWidget extends StatelessWidget {
     super.key,
     required this.repository,
     required this.icon,
+    required this.getRepository
   });
 
   final GitHubRepository repository;
+  final GitHubGetRepository? getRepository;
   final RepositoryItemIcon icon;
 
   Widget countText(RepositoryItemIcon icon) {
@@ -20,7 +22,7 @@ class RepositoryDetailBodyItemWidget extends StatelessWidget {
       case RepositoryItemIcon.stars:
         return Text(repository.starCountWithComma);
       case RepositoryItemIcon.watchers:
-        return Text(repository.watchCountWithComma);
+        return Text(getRepository?.subscribersCountWithComma ?? "0");
       case RepositoryItemIcon.forks:
         return Text(repository.forkCountWithComma);
       case RepositoryItemIcon.issues:
