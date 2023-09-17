@@ -15,7 +15,7 @@ I adopt MVVM like a native app as Flutter architecture. This architecture follow
     </tr>
     <tr>
         <td><img width=300 src="https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/9b71e965-bd90-486d-8d67-0c1376e97ed9"></td>
-        <td><img width=300 src="https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/39ffd188-df6c-4148-a348-be307fa9c894"></td>
+        <td><img width=300 src="https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/56ff6dc3-3147-4b24-ba5d-8d9f7dd00a35"></td>
     </tr>
 </table>
 
