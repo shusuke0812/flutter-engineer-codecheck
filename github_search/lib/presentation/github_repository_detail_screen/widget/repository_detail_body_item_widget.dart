@@ -22,7 +22,7 @@ class RepositoryDetailBodyItemWidget extends StatelessWidget {
       case RepositoryItemIcon.stars:
         return Text(repository.starCountWithComma);
       case RepositoryItemIcon.watchers:
-        return Text(getRepository?.subscribersCountWithComma ?? "0");
+        return Text(getRepository?.subscribersCountWithComma ?? "-");
       case RepositoryItemIcon.forks:
         return Text(repository.forkCountWithComma);
       case RepositoryItemIcon.issues:
