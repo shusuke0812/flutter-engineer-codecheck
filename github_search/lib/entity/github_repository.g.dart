@@ -39,3 +39,15 @@ Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
       'owner': instance.owner,
       'license': instance.license,
     };
+
+_$_GitHubGetRepository _$$_GitHubGetRepositoryFromJson(
+        Map<String, dynamic> json) =>
+    _$_GitHubGetRepository(
+      subscribersCount: json['subscribers_count'] as String,
+    );
+
+Map<String, dynamic> _$$_GitHubGetRepositoryToJson(
+        _$_GitHubGetRepository instance) =>
+    <String, dynamic>{
+      'subscribers_count': instance.subscribersCount,
+    };

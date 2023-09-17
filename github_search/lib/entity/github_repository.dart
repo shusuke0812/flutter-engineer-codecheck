@@ -53,3 +53,12 @@ extension GitHubRepositoryExtension on GitHubRepository {
     return toWithSeparated(issueCount);
   }
 }
+
+@freezed
+class GitHubGetRepository with _$GitHubGetRepository {
+  const factory GitHubGetRepository({
+    @JsonKey(name: 'subscribers_count') required String subscribersCount
+  }) = _GitHubGetRepository;
+
+  factory GitHubGetRepository.fromJson(Map<String, dynamic> json) => _$GitHubGetRepositoryFromJson(json);
+}

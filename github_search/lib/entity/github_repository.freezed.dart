@@ -423,3 +423,147 @@ abstract class _GitHubRepository implements GitHubRepository {
   _$$_GitHubRepositoryCopyWith<_$_GitHubRepository> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+GitHubGetRepository _$GitHubGetRepositoryFromJson(Map<String, dynamic> json) {
+  return _GitHubGetRepository.fromJson(json);
+}
+
+/// @nodoc
+mixin _$GitHubGetRepository {
+  @JsonKey(name: 'subscribers_count')
+  String get subscribersCount => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GitHubGetRepositoryCopyWith<GitHubGetRepository> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GitHubGetRepositoryCopyWith<$Res> {
+  factory $GitHubGetRepositoryCopyWith(
+          GitHubGetRepository value, $Res Function(GitHubGetRepository) then) =
+      _$GitHubGetRepositoryCopyWithImpl<$Res, GitHubGetRepository>;
+  @useResult
+  $Res call({@JsonKey(name: 'subscribers_count') String subscribersCount});
+}
+
+/// @nodoc
+class _$GitHubGetRepositoryCopyWithImpl<$Res, $Val extends GitHubGetRepository>
+    implements $GitHubGetRepositoryCopyWith<$Res> {
+  _$GitHubGetRepositoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? subscribersCount = null,
+  }) {
+    return _then(_value.copyWith(
+      subscribersCount: null == subscribersCount
+          ? _value.subscribersCount
+          : subscribersCount // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_GitHubGetRepositoryCopyWith<$Res>
+    implements $GitHubGetRepositoryCopyWith<$Res> {
+  factory _$$_GitHubGetRepositoryCopyWith(_$_GitHubGetRepository value,
+          $Res Function(_$_GitHubGetRepository) then) =
+      __$$_GitHubGetRepositoryCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@JsonKey(name: 'subscribers_count') String subscribersCount});
+}
+
+/// @nodoc
+class __$$_GitHubGetRepositoryCopyWithImpl<$Res>
+    extends _$GitHubGetRepositoryCopyWithImpl<$Res, _$_GitHubGetRepository>
+    implements _$$_GitHubGetRepositoryCopyWith<$Res> {
+  __$$_GitHubGetRepositoryCopyWithImpl(_$_GitHubGetRepository _value,
+      $Res Function(_$_GitHubGetRepository) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? subscribersCount = null,
+  }) {
+    return _then(_$_GitHubGetRepository(
+      subscribersCount: null == subscribersCount
+          ? _value.subscribersCount
+          : subscribersCount // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_GitHubGetRepository implements _GitHubGetRepository {
+  const _$_GitHubGetRepository(
+      {@JsonKey(name: 'subscribers_count') required this.subscribersCount});
+
+  factory _$_GitHubGetRepository.fromJson(Map<String, dynamic> json) =>
+      _$$_GitHubGetRepositoryFromJson(json);
+
+  @override
+  @JsonKey(name: 'subscribers_count')
+  final String subscribersCount;
+
+  @override
+  String toString() {
+    return 'GitHubGetRepository(subscribersCount: $subscribersCount)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GitHubGetRepository &&
+            (identical(other.subscribersCount, subscribersCount) ||
+                other.subscribersCount == subscribersCount));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, subscribersCount);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GitHubGetRepositoryCopyWith<_$_GitHubGetRepository> get copyWith =>
+      __$$_GitHubGetRepositoryCopyWithImpl<_$_GitHubGetRepository>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_GitHubGetRepositoryToJson(
+      this,
+    );
+  }
+}
+
+abstract class _GitHubGetRepository implements GitHubGetRepository {
+  const factory _GitHubGetRepository(
+      {@JsonKey(name: 'subscribers_count')
+      required final String subscribersCount}) = _$_GitHubGetRepository;
+
+  factory _GitHubGetRepository.fromJson(Map<String, dynamic> json) =
+      _$_GitHubGetRepository.fromJson;
+
+  @override
+  @JsonKey(name: 'subscribers_count')
+  String get subscribersCount;
+  @override
+  @JsonKey(ignore: true)
+  _$$_GitHubGetRepositoryCopyWith<_$_GitHubGetRepository> get copyWith =>
+      throw _privateConstructorUsedError;
+}
