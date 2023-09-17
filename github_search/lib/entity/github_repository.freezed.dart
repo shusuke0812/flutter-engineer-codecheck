@@ -431,7 +431,7 @@ GitHubGetRepository _$GitHubGetRepositoryFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GitHubGetRepository {
   @JsonKey(name: 'subscribers_count')
-  String get subscribersCount => throw _privateConstructorUsedError;
+  int get subscribersCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -445,7 +445,7 @@ abstract class $GitHubGetRepositoryCopyWith<$Res> {
           GitHubGetRepository value, $Res Function(GitHubGetRepository) then) =
       _$GitHubGetRepositoryCopyWithImpl<$Res, GitHubGetRepository>;
   @useResult
-  $Res call({@JsonKey(name: 'subscribers_count') String subscribersCount});
+  $Res call({@JsonKey(name: 'subscribers_count') int subscribersCount});
 }
 
 /// @nodoc
@@ -467,7 +467,7 @@ class _$GitHubGetRepositoryCopyWithImpl<$Res, $Val extends GitHubGetRepository>
       subscribersCount: null == subscribersCount
           ? _value.subscribersCount
           : subscribersCount // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ) as $Val);
   }
 }
@@ -480,7 +480,7 @@ abstract class _$$_GitHubGetRepositoryCopyWith<$Res>
       __$$_GitHubGetRepositoryCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'subscribers_count') String subscribersCount});
+  $Res call({@JsonKey(name: 'subscribers_count') int subscribersCount});
 }
 
 /// @nodoc
@@ -500,7 +500,7 @@ class __$$_GitHubGetRepositoryCopyWithImpl<$Res>
       subscribersCount: null == subscribersCount
           ? _value.subscribersCount
           : subscribersCount // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -516,7 +516,7 @@ class _$_GitHubGetRepository implements _GitHubGetRepository {
 
   @override
   @JsonKey(name: 'subscribers_count')
-  final String subscribersCount;
+  final int subscribersCount;
 
   @override
   String toString() {
@@ -554,14 +554,14 @@ class _$_GitHubGetRepository implements _GitHubGetRepository {
 abstract class _GitHubGetRepository implements GitHubGetRepository {
   const factory _GitHubGetRepository(
       {@JsonKey(name: 'subscribers_count')
-      required final String subscribersCount}) = _$_GitHubGetRepository;
+      required final int subscribersCount}) = _$_GitHubGetRepository;
 
   factory _GitHubGetRepository.fromJson(Map<String, dynamic> json) =
       _$_GitHubGetRepository.fromJson;
 
   @override
   @JsonKey(name: 'subscribers_count')
-  String get subscribersCount;
+  int get subscribersCount;
   @override
   @JsonKey(ignore: true)
   _$$_GitHubGetRepositoryCopyWith<_$_GitHubGetRepository> get copyWith =>

@@ -43,7 +43,7 @@ Map<String, dynamic> _$$_GitHubRepositoryToJson(_$_GitHubRepository instance) =>
 _$_GitHubGetRepository _$$_GitHubGetRepositoryFromJson(
         Map<String, dynamic> json) =>
     _$_GitHubGetRepository(
-      subscribersCount: json['subscribers_count'] as String,
+      subscribersCount: json['subscribers_count'] as int,
     );
 
 Map<String, dynamic> _$$_GitHubGetRepositoryToJson(

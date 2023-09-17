@@ -32,33 +32,39 @@ class GitHubRepository with _$GitHubRepository {
 }
 
 extension GitHubRepositoryExtension on GitHubRepository {
-  String toWithSeparated(int value) {
-    final formatter = NumberFormat("#,###");
-    return formatter.format(value);
-  }
-
   String get starCountWithComma {
-    return toWithSeparated(starCount);
+    return _toWithSeparated(starCount);
   }
 
   String get watchCountWithComma {
-    return toWithSeparated(watchCount);
+    return _toWithSeparated(watchCount);
   }
 
   String get forkCountWithComma {
-    return toWithSeparated(forkCount);
+    return _toWithSeparated(forkCount);
   }
 
   String get issueCountWithComma {
-    return toWithSeparated(issueCount);
+    return _toWithSeparated(issueCount);
   }
 }
 
 @freezed
 class GitHubGetRepository with _$GitHubGetRepository {
   const factory GitHubGetRepository({
-    @JsonKey(name: 'subscribers_count') required String subscribersCount
+    @JsonKey(name: 'subscribers_count') required int subscribersCount
   }) = _GitHubGetRepository;
 
   factory GitHubGetRepository.fromJson(Map<String, dynamic> json) => _$GitHubGetRepositoryFromJson(json);
+}
+
+extension GitHubGetRepositoryExtension on GitHubGetRepository {
+  String get subscribersCountWithComma {
+    return _toWithSeparated(subscribersCount);
+  }
+}
+
+String _toWithSeparated(int value) {
+  final formatter = NumberFormat("#,###");
+  return formatter.format(value);
 }
