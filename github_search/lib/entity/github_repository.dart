@@ -7,6 +7,11 @@ import 'github_license.dart';
 part 'github_repository.freezed.dart';
 part 'github_repository.g.dart';
 
+// NOTE: 
+// Watch count is Incorrect value. 🔥
+// Must use `subscribers_count` of Get a repository API. 
+// Ref is here. (https://github.com/octokit/octokit.net/issues/1510)
+
 @freezed
 class GitHubRepository with _$GitHubRepository {
   const factory GitHubRepository({
@@ -27,24 +32,39 @@ class GitHubRepository with _$GitHubRepository {
 }
 
 extension GitHubRepositoryExtension on GitHubRepository {
-  String toWithSeparated(int value) {
-    final formatter = NumberFormat("#,###");
-    return formatter.format(value);
-  }
-
   String get starCountWithComma {
-    return toWithSeparated(starCount);
+    return _toWithSeparatedComma(starCount);
   }
 
   String get watchCountWithComma {
-    return toWithSeparated(watchCount);
+    return _toWithSeparatedComma(watchCount);
   }
 
   String get forkCountWithComma {
-    return toWithSeparated(forkCount);
+    return _toWithSeparatedComma(forkCount);
   }
 
   String get issueCountWithComma {
-    return toWithSeparated(issueCount);
+    return _toWithSeparatedComma(issueCount);
   }
+}
+
+@freezed
+class GitHubGetRepository with _$GitHubGetRepository {
+  const factory GitHubGetRepository({
+    @JsonKey(name: 'subscribers_count') required int subscribersCount
+  }) = _GitHubGetRepository;
+
+  factory GitHubGetRepository.fromJson(Map<String, dynamic> json) => _$GitHubGetRepositoryFromJson(json);
+}
+
+extension GitHubGetRepositoryExtension on GitHubGetRepository {
+  String get subscribersCountWithComma {
+    return _toWithSeparatedComma(subscribersCount);
+  }
+}
+
+String _toWithSeparatedComma(int value) {
+  final formatter = NumberFormat("#,###");
+  return formatter.format(value);
 }

@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:github_search/entity/github_repository.dart';
 import 'package:github_search/repository/github_readme_repository.dart';
+import 'package:github_search/repository/github_repo_repository.dart';
 import 'package:github_search/utility/logger.dart';
 
 class GitHubRepositoryDetailViewModel with ChangeNotifier {
-  GitHubRepositoryDetailViewModel({required this.githubReadmeRepository});
+  GitHubRepositoryDetailViewModel({
+    required this.githubReadmeRepository,
+    required this.gitHubRepoRepository
+  });
 
   final GitHubReadmeRepository githubReadmeRepository;
+  final GitHubRepoRepository gitHubRepoRepository;
 
   // Success notify values
   String _htmlUrl = "https://flutter.dev/";
   String get htmlUrl {
     return _htmlUrl;
+  }
+
+  GitHubGetRepository? _getRepository;
+  GitHubGetRepository? get getRepository {
+    return _getRepository;
   }
 
   // Error notifiy values
@@ -33,6 +44,23 @@ class GitHubRepositoryDetailViewModel with ChangeNotifier {
         _errorMessage = "Not found README";
         notifyListeners();
       }, 
+      exception: (exception) {
+        // do nothing
+      }
+    );
+  }
+
+  Future<void> loadSubscribersCount(String fullName) async {
+    final result = await gitHubRepoRepository.getRepository(fullName: fullName);
+    result.when(
+      success: (data) {
+        _getRepository = data;
+        notifyListeners();
+      },
+      error: (error) {
+        _errorMessage = "Not found subscribers count";
+        notifyListeners();
+      },
       exception: (exception) {
         // do nothing
       }

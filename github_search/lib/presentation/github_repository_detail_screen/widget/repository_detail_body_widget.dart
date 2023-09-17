@@ -6,10 +6,12 @@ import 'package:github_search/presentation/github_repository_detail_screen/widge
 class RepositoryDetailBodyWidget extends StatelessWidget {
   const RepositoryDetailBodyWidget({
     super.key,
-    required this.repository
+    required this.repository,
+    required this.getRepository
   });
 
   final GitHubRepository repository;
+  final GitHubGetRepository? getRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class RepositoryDetailBodyWidget extends StatelessWidget {
               child: RepositoryDetailBodyItemWidget(
                 icon: RepositoryItemIcon.values[index],
                 repository: repository,
+                getRepository: getRepository,
               ),
             ),
             );
