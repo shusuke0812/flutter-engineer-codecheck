@@ -33,19 +33,19 @@ class GitHubRepository with _$GitHubRepository {
 
 extension GitHubRepositoryExtension on GitHubRepository {
   String get starCountWithComma {
-    return _toWithSeparated(starCount);
+    return _toWithSeparatedComma(starCount);
   }
 
   String get watchCountWithComma {
-    return _toWithSeparated(watchCount);
+    return _toWithSeparatedComma(watchCount);
   }
 
   String get forkCountWithComma {
-    return _toWithSeparated(forkCount);
+    return _toWithSeparatedComma(forkCount);
   }
 
   String get issueCountWithComma {
-    return _toWithSeparated(issueCount);
+    return _toWithSeparatedComma(issueCount);
   }
 }
 
@@ -60,11 +60,11 @@ class GitHubGetRepository with _$GitHubGetRepository {
 
 extension GitHubGetRepositoryExtension on GitHubGetRepository {
   String get subscribersCountWithComma {
-    return _toWithSeparated(subscribersCount);
+    return _toWithSeparatedComma(subscribersCount);
   }
 }
 
-String _toWithSeparated(int value) {
+String _toWithSeparatedComma(int value) {
   final formatter = NumberFormat("#,###");
   return formatter.format(value);
 }
