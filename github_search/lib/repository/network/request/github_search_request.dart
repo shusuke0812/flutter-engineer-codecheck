@@ -14,10 +14,14 @@ class GitHubSearchRequest extends RequestInterface {
   final int page = 1;
 
   @override
-  String baseURL = Constant.githubBaseUrl;
+  String get baseURL {
+    return Constant.githubBaseUrl;
+  }
 
   @override
-  HTTPMethod method = HTTPMethod.get;
+  HTTPMethod get method {
+    return HTTPMethod.get;
+  }
 
   @override
   String get path {
