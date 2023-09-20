@@ -36,4 +36,7 @@ class GitHubSearchRequest extends RequestInterface {
       'page': '$page'
     };
   }
+
+  @override
+  Future<Map<String, String>> header() async => Constant.githubHeader;
 }

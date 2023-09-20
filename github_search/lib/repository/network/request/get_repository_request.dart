@@ -30,4 +30,7 @@ class GetRepositoryRequest extends RequestInterface {
   Future<Map<String, String>?> parameters() async {
     return null;
   }
+
+  @override
+  Future<Map<String, String>> header() async => Constant.githubHeader;
 }
