@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:github_search/entity/github_repository.dart';
+import 'package:github_search/entity/repository.dart';
 import 'package:github_search/utility/router/router_path.dart';
 import 'package:go_router/go_router.dart';
 
 // Screen
-import 'package:github_search/presentation/github_search_screen/github_search_view.dart';
-import 'package:github_search/presentation/github_repository_detail_screen/github_repository_detail_view.dart';
+import 'package:github_search/presentation/search_screen/search_view.dart';
+import 'package:github_search/presentation/repository_detail_screen/repository_detail_view.dart';
 
 final appRouter = GoRouter(
   initialLocation: RoutePath.repositoryList.path,
@@ -16,7 +16,7 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) {
         return MaterialPage(
           key: state.pageKey,
-          child: GitHubSearchView(title: RoutePath.repositoryList.title)
+          child: SearchView(title: RoutePath.repositoryList.title)
         );
       },
     ),
@@ -26,9 +26,9 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) {
         return MaterialPage(
           key: state.pageKey,
-          child:  GitHubRepisitoryDetailView(
+          child:  RepisitoryDetailView(
             title: RoutePath.repositoryDetail.title,
-            repository: state.extra as GitHubRepository,
+            repository: state.extra as Repository,
           )
         );
       },
