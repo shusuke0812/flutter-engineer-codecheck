@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/presentation/repository_detail_screen/repository_detail_viewmodel.dart';
 import 'package:github_search/utility/webview_controller_factory.dart';
-import 'package:provider/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:github_search/entity/repository.dart';
 import 'package:github_search/presentation/repository_detail_screen/widget/repository_detail_body_widget.dart';
 import 'package:github_search/presentation/repository_detail_screen/widget/repository_detail_header_widget.dart';
 
-class RepisitoryDetailView extends StatefulWidget {
+class RepisitoryDetailView extends StatelessWidget {
   const RepisitoryDetailView({
     super.key,
     required this.title,
@@ -18,27 +18,32 @@ class RepisitoryDetailView extends StatefulWidget {
   final Repository repository;
 
   @override
-  State<RepisitoryDetailView> createState() => _RepisitoryDetailViewState();
+  Widget build(BuildContext context) {
+    return _RepisitoryDetailContentView(
+      title: title,
+      repository: repository,
+    );
+  }
 }
 
-class _RepisitoryDetailViewState extends State<RepisitoryDetailView> {
+class _RepisitoryDetailContentView extends ConsumerWidget {
+  const _RepisitoryDetailContentView({
+    Key? key,
+    required this.title,
+    required this.repository
 
-  Future<void> _loadReadmeUrl() async {
-    await Provider.of<RepositoryDetailViewModel>(context, listen: false).loadRepositoryReadme(
-      widget.repository.owner?.login ?? "", widget.repository.name
-    );
-  }
+  }) : super(key: key);
 
-  Future<void> _loadSubscribersCount() async {
-    await Provider.of<RepositoryDetailViewModel>(context, listen: false).loadSubscribersCount(
-      widget.repository.fullName
-    );
-  }
+  final String title;
+  final Repository repository;
   
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(repositoryDetailViewModelProvider);
+    final viewModel = ref.watch(repositoryDetailViewModelProvider.notifier);
+  
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text(title)),
       body: Center(
         child: Container(
           color: Colors.grey.withAlpha(50),
@@ -47,7 +52,7 @@ class _RepisitoryDetailViewState extends State<RepisitoryDetailView> {
             children: [
               const SizedBox(height: 20),
               RepositoryDetailHeaderWidget(
-                repository: widget.repository,
+                repository: repository,
                 onTapHomePageUrl: (homaPageUrl) {
                   final url = Uri.parse(homaPageUrl);
                   launchUrl(url);
@@ -55,21 +60,24 @@ class _RepisitoryDetailViewState extends State<RepisitoryDetailView> {
               ),
               const SizedBox(height: 20),
               FutureBuilder(
-                future: _loadSubscribersCount(),
+                future: viewModel.loadSubscribersCount(repository.fullName),
                 builder: (context, snapshot) {
                   return RepositoryDetailBodyWidget(
-                    repository: widget.repository,
-                    getRepository: Provider.of<RepositoryDetailViewModel>(context).getRepository,
+                    repository: repository,
+                    getRepository: state.getRepository,
                   );
                 }
               ),
               const SizedBox(height: 20),
               FutureBuilder(
-                future: _loadReadmeUrl(),
+                future: viewModel.loadRepositoryReadme(
+                  repository.owner?.login ?? "", 
+                  repository.name
+                ),
                 builder: (context, snapshot) {
                   return Expanded(
                     child: WebViewWidget(
-                      controller: webviewControllerFactory(Provider.of<RepositoryDetailViewModel>(context).htmlUrl)
+                      controller: webviewControllerFactory(state.htmlUrl)
                     )
                   );
                 }

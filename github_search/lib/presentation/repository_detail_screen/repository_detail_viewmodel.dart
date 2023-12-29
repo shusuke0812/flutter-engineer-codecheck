@@ -1,48 +1,36 @@
-import 'package:flutter/material.dart';
-import 'package:github_search/entity/repository.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:github_search/presentation/repository_detail_screen/repository_detail_view_state.dart';
 import 'package:github_search/repository/readme_repository.dart';
 import 'package:github_search/repository/repo_repository.dart';
 import 'package:github_search/utility/logger.dart';
 
-class RepositoryDetailViewModel with ChangeNotifier {
+final repositoryDetailViewModelProvider = StateNotifierProvider.autoDispose<RepositoryDetailViewModel, RepositoryDetailViewState>((ref) {
+  return RepositoryDetailViewModel(
+    readmeRepository: ReadmeRepository(), 
+    repoRepository: RepoRepository()
+  );
+});
+
+class RepositoryDetailViewModel extends StateNotifier<RepositoryDetailViewState> {
   RepositoryDetailViewModel({
     required this.readmeRepository,
     required this.repoRepository
-  });
+  }) : super(const RepositoryDetailViewState());
 
   final ReadmeRepository readmeRepository;
   final RepoRepository repoRepository;
-
-  // Success notify values
-  String _htmlUrl = "https://flutter.dev/";
-  String get htmlUrl {
-    return _htmlUrl;
-  }
-
-  GetRepository? _getRepository;
-  GetRepository? get getRepository {
-    return _getRepository;
-  }
-
-  // Error notifiy values
-  String _errorMessage = "";
-  String get errorMessage {
-    return _errorMessage;
-  }
 
   Future<void> loadRepositoryReadme(String ownerName, String repositoryName) async {
     final result = await readmeRepository.getReadme(ownerName: ownerName, repositoryName: repositoryName);
     result.when(
       success: (data) {
         if (data.htmlUrl != null) {
-          _htmlUrl = data.htmlUrl!;
-          logger.d("url=$_htmlUrl");
-          notifyListeners();
+          state = state.updateHtmlUrl(data.htmlUrl!);
+          logger.d("url=${data.htmlUrl}");
         }
       }, 
       error: (error) {
-        _errorMessage = "Not found README";
-        notifyListeners();
+        state = state.updateErrorMessage("Not found README");
       }, 
       exception: (exception) {
         // do nothing
@@ -54,12 +42,10 @@ class RepositoryDetailViewModel with ChangeNotifier {
     final result = await repoRepository.getRepository(fullName: fullName);
     result.when(
       success: (data) {
-        _getRepository = data;
-        notifyListeners();
+        state = state.updateGetRepository(data);
       },
       error: (error) {
-        _errorMessage = "Not found subscribers count";
-        notifyListeners();
+        state = state.updateErrorMessage("Not found subscribers count");
       },
       exception: (exception) {
         // do nothing

@@ -1,60 +1,68 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search/presentation/search_screen/search_viewmodel.dart';
 import 'package:github_search/presentation/search_screen/widget/repository_list_widget.dart';
 import 'package:github_search/presentation/search_screen/widget/search_text_field_widget.dart';
 import 'package:github_search/utility/router/router_path.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
-class SearchView extends StatefulWidget {
+class SearchView extends StatelessWidget {
   const SearchView({super.key, required this.title});
   final String title;
 
   @override
-  State<SearchView> createState() => _GitHubSearchViewState();
+  Widget build(BuildContext context) {
+    return _SearchContentView(title: title);
+  }
 }
 
-class _GitHubSearchViewState extends State<SearchView> {
-  Widget? _debugFloatingActionButton() {
-    return kDebugMode ?
-      FloatingActionButton(
-        child: const Icon(FontAwesomeIcons.bolt),
-        onPressed: () async {
-          // NOTE: debug for getting REST api response
-          Provider.of<SearchViewModel>(context, listen: false).loadRepositoryList("swift");
-        }
-      )
-      : null;
-  }
+class _SearchContentView extends ConsumerWidget {
+  const _SearchContentView({
+    Key? key,
+    required this.title
+  }) : super(key: key);
+  
+  final String title;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(searchViewModelProvider);
+    final viewModel = ref.watch(searchViewModelProvider.notifier);
+
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text(title)),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GitHubSearchTextFieldWidget(
             onSubmitted: (String searchWord) {
-              Provider.of<SearchViewModel>(context, listen: false).loadRepositoryList(searchWord);
+              viewModel.loadRepositoryList(searchWord);
             },
           ),
           Expanded(
             child: RepositoryListWidget(
-              list: Provider.of<SearchViewModel>(context).list,
+              list: state.list,
               onTapCell: (indext) {
                 context.push(
                   RoutePath.repositoryDetail.path,
-                  extra: Provider.of<SearchViewModel>(context, listen: false).list?.items[indext]
+                  extra: state.list?.items[indext]
                 );
               },
             )
           )
         ],
       ),
-      floatingActionButton: _debugFloatingActionButton(),
+      floatingActionButton: kDebugMode 
+        ? FloatingActionButton(
+            child: const Icon(FontAwesomeIcons.bolt),
+            onPressed: () async {
+            // NOTE: debug for getting REST api response
+              viewModel.loadRepositoryList('flutter');
+            }
+          )
+        : null,
     );
   }
 }
