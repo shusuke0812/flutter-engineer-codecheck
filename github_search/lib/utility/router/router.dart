@@ -26,7 +26,7 @@ final appRouter = GoRouter(
       pageBuilder: (context, state) {
         return MaterialPage(
           key: state.pageKey,
-          child:  RepisitoryDetailView(
+          child:  RepositoryDetailView(
             title: RoutePath.repositoryDetail.title,
             repository: state.extra as Repository,
           )

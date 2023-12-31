@@ -8,8 +8,8 @@ import 'package:github_search/entity/repository.dart';
 import 'package:github_search/presentation/repository_detail_screen/widget/repository_detail_body_widget.dart';
 import 'package:github_search/presentation/repository_detail_screen/widget/repository_detail_header_widget.dart';
 
-class RepisitoryDetailView extends StatelessWidget {
-  const RepisitoryDetailView({
+class RepositoryDetailView extends StatelessWidget {
+  const RepositoryDetailView({
     super.key,
     required this.title,
     required this.repository,
@@ -19,15 +19,15 @@ class RepisitoryDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _RepisitoryDetailContentView(
+    return _RepositoryDetailContentView(
       title: title,
       repository: repository,
     );
   }
 }
 
-class _RepisitoryDetailContentView extends ConsumerWidget {
-  const _RepisitoryDetailContentView({
+class _RepositoryDetailContentView extends ConsumerWidget {
+  const _RepositoryDetailContentView({
     Key? key,
     required this.title,
     required this.repository
