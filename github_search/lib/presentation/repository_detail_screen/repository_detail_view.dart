@@ -38,7 +38,9 @@ class _RepositoryDetailContentView extends ConsumerWidget {
   
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final viewModel = ref.read(repositoryDetailViewModelProvider);
+    final getRepository = ref.watch(repositoryDetailViewModelProvider.select((state) => state.getRepository));
+    final readmeUrl = ref.watch(repositoryDetailViewModelProvider.select((state) => state.htmlUrl));
+    final viewModel = ref.read(repositoryDetailViewModelProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(title: Text(title)),
@@ -62,7 +64,7 @@ class _RepositoryDetailContentView extends ConsumerWidget {
                 builder: (context, snapshot) {
                   return RepositoryDetailBodyWidget(
                     repository: repository,
-                    getRepository: viewModel.state.getRepository,
+                    getRepository: getRepository,
                   );
                 }
               ),
@@ -75,7 +77,7 @@ class _RepositoryDetailContentView extends ConsumerWidget {
                 builder: (context, snapshot) {
                   return Expanded(
                     child: WebViewWidget(
-                      controller: webviewControllerFactory(viewModel.state.htmlUrl)
+                      controller: webviewControllerFactory(readmeUrl)
                     )
                   );
                 }
