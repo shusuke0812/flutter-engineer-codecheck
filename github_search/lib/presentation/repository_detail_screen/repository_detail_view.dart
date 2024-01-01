@@ -7,7 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:github_search/entity/repository.dart';
 import 'package:github_search/presentation/repository_detail_screen/widget/repository_detail_body_widget.dart';
 import 'package:github_search/presentation/repository_detail_screen/widget/repository_detail_header_widget.dart';
-
 class RepositoryDetailView extends StatelessWidget {
   const RepositoryDetailView({
     super.key,
@@ -39,9 +38,8 @@ class _RepositoryDetailContentView extends ConsumerWidget {
   
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(repositoryDetailViewModelProvider);
-    final viewModel = ref.watch(repositoryDetailViewModelProvider.notifier);
-  
+    final viewModel = ref.read(repositoryDetailViewModelProvider);
+
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: Center(
@@ -64,7 +62,7 @@ class _RepositoryDetailContentView extends ConsumerWidget {
                 builder: (context, snapshot) {
                   return RepositoryDetailBodyWidget(
                     repository: repository,
-                    getRepository: state.getRepository,
+                    getRepository: viewModel.state.getRepository,
                   );
                 }
               ),
@@ -77,7 +75,7 @@ class _RepositoryDetailContentView extends ConsumerWidget {
                 builder: (context, snapshot) {
                   return Expanded(
                     child: WebViewWidget(
-                      controller: webviewControllerFactory(state.htmlUrl)
+                      controller: webviewControllerFactory(viewModel.state.htmlUrl)
                     )
                   );
                 }
