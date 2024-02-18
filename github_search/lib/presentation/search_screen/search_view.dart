@@ -33,7 +33,7 @@ class _SearchContentView extends ConsumerWidget {
     final viewModel = ref.read(searchViewModelProvider.notifier);
 
     return Scaffold(
-      appBar: customAppBar(context, title),
+      appBar: customAppBar(title),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

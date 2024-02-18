@@ -44,7 +44,7 @@ class _RepositoryDetailContentView extends ConsumerWidget {
     final viewModel = ref.read(repositoryDetailViewModelProvider.notifier);
 
     return Scaffold(
-      appBar: customAppBar(context, title),
+      appBar: customAppBar(title),
       body: Center(
         child: Container(
           color: Colors.grey.withAlpha(50),
