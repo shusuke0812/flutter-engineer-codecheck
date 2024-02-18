@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:github_search/presentation/search_screen/search_viewmodel.dart';
 import 'package:github_search/presentation/search_screen/widget/repository_list_widget.dart';
 import 'package:github_search/presentation/search_screen/widget/search_text_field_widget.dart';
+import 'package:github_search/utility/custom_app_bar.dart';
 import 'package:github_search/utility/router/router_path.dart';
 import 'package:go_router/go_router.dart';
 
@@ -32,7 +33,7 @@ class _SearchContentView extends ConsumerWidget {
     final viewModel = ref.read(searchViewModelProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: customAppBar(context, title),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
