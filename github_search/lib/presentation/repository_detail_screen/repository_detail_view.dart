@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/presentation/repository_detail_screen/repository_detail_viewmodel.dart';
+import 'package:github_search/utility/custom_app_bar.dart';
 import 'package:github_search/utility/webview_controller_factory.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -43,7 +44,7 @@ class _RepositoryDetailContentView extends ConsumerWidget {
     final viewModel = ref.read(repositoryDetailViewModelProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: customAppBar(context, title),
       body: Center(
         child: Container(
           color: Colors.grey.withAlpha(50),

@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "github_search",
+            "cwd": "github_search",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "github_search (profile mode)",
+            "cwd": "github_search",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "github_search (release mode)",
+            "cwd": "github_search",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
