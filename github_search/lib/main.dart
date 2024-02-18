@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       routeInformationProvider: appRouter.routeInformationProvider,
       title: 'GitHub Search',
       theme: ThemeData(
+        useMaterial3: false,
         primarySwatch: Colors.blueGrey,
       ),
     );
