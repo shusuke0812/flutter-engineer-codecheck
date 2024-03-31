@@ -2,9 +2,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:github_search/main.dart';
 import 'package:github_search/presentation/search_screen/search_viewmodel.dart';
 import 'package:github_search/presentation/search_screen/widget/repository_list_widget.dart';
 import 'package:github_search/presentation/search_screen/widget/search_text_field_widget.dart';
+import 'package:github_search/utility/app_lifecycle_listener.dart';
 import 'package:github_search/utility/custom_app_bar.dart';
 import 'package:github_search/utility/router/router_path.dart';
 import 'package:go_router/go_router.dart';
@@ -31,6 +33,12 @@ class _SearchContentView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(searchViewModelProvider);
     final viewModel = ref.read(searchViewModelProvider.notifier);
+
+    ref.listen(appLifecycleProvider, (previous, next) {
+      if (next == AppLifecycleState.resumed) {
+        //restartApp(context);
+      }
+     });
 
     return Scaffold(
       appBar: customAppBar(title),
