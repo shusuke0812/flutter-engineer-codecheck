@@ -10,7 +10,7 @@ void main() {
 
   runApp(
     const ProviderScope(
-      child: MyApp()
+      child: _RestartWidget(child: MyApp())
     )
   );
 }
@@ -29,6 +29,37 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         primarySwatch: Colors.blueGrey,
       ),
+    );
+  }
+}
+
+class _RestartWidget extends StatefulWidget {
+  const _RestartWidget({super.key, required this.child});
+  final Widget child;
+
+  static restartApp(BuildContext context) {
+    final state = context.findAncestorStateOfType<_RestartWidgetState>();
+    state?.restartApp();
+  }
+
+  @override
+  createState() => _RestartWidgetState();
+}
+
+class _RestartWidgetState extends State<_RestartWidget> {
+  Key key = UniqueKey();
+
+  void restartApp() {
+    setState(() {
+      key = UniqueKey();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      key: key,
+      child: widget.child,
     );
   }
 }
