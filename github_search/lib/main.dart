@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:github_search/utility/logger.dart';
 import 'package:github_search/utility/router/router.dart';
 
 void main() {
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+void restartApp(BuildContext context) {
+  _RestartWidget.restartApp(context);
+} 
+
 class _RestartWidget extends StatefulWidget {
   const _RestartWidget({super.key, required this.child});
   final Widget child;
@@ -57,6 +62,7 @@ class _RestartWidgetState extends State<_RestartWidget> {
 
   @override
   Widget build(BuildContext context) {
+    logger.d("build key=$key");
     return Container(
       key: key,
       child: widget.child,
