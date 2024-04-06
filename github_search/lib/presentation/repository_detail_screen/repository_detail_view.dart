@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:github_search/presentation/repository_detail_screen/repository_detail_viewmodel.dart';
+import 'package:github_search/presentation/repository_detail_screen/viewmodel/repository_detail_viewmodel.dart';
 import 'package:github_search/utility/custom_app_bar.dart';
 import 'package:github_search/utility/webview_controller_factory.dart';
 import 'package:webview_flutter/webview_flutter.dart';

@@ -1,23 +1,17 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/presentation/repository_detail_screen/repository_detail_view_state.dart';
 import 'package:github_search/repository/readme_repository.dart';
 import 'package:github_search/repository/repo_repository.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final repositoryDetailViewModelProvider = StateNotifierProvider<RepositoryDetailViewModel, RepositoryDetailViewState>((ref) {
-  return RepositoryDetailViewModel(
-    readmeRepository: ReadmeRepository(), 
-    repoRepository: RepoRepository()
-  );
-});
+part 'repository_detail_viewmodel.g.dart';
 
-class RepositoryDetailViewModel extends StateNotifier<RepositoryDetailViewState> {
-  RepositoryDetailViewModel({
-    required this.readmeRepository,
-    required this.repoRepository
-  }) : super(const RepositoryDetailViewState());
+@riverpod
+class RepositoryDetailViewModel extends _$RepositoryDetailViewModel {
+  final readmeRepository = ReadmeRepository();
+  final repoRepository = RepoRepository();
 
-  final ReadmeRepository readmeRepository;
-  final RepoRepository repoRepository;
+  @override
+  RepositoryDetailViewState build() => const RepositoryDetailViewState();
 
   Future<void> loadRepositoryReadme(String ownerName, String repositoryName) async {
     final result = await readmeRepository.getReadme(ownerName: ownerName, repositoryName: repositoryName);

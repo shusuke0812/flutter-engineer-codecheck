@@ -1,18 +1,16 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/presentation/search_screen/search_view_state.dart';
 import 'package:github_search/utility/logger.dart';
 import 'package:github_search/repository/search_repository.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final searchViewModelProvider = StateNotifierProvider.autoDispose<SearchViewModel, SearchViewState>((ref) {
-  return SearchViewModel(searchRepository: SearchRepository());
-});
+part 'search_viewmodel.g.dart';
 
-class SearchViewModel extends StateNotifier<SearchViewState> {
-  SearchViewModel({
-    required this.searchRepository
-  }) : super(const SearchViewState());
+@riverpod
+class SearchViewModel extends _$SearchViewModel {
+  final searchRepository = SearchRepository();
 
-  final SearchRepositoryInterface searchRepository;
+  @override
+  SearchViewState build() => const SearchViewState();
 
   Future<void> loadRepositoryList(String searchWord) async {
     final result = await searchRepository.getRepositories(searchWord: searchWord);
