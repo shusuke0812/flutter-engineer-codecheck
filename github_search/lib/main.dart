@@ -17,10 +17,13 @@ void main() async {
       options.dsn = dotenv.get('SENTRY_DSN');
       options.tracesSampleRate = 1.0;
       options.profilesSampleRate = 1.0;
+      options.attachScreenshot = true;
     },
     appRunner: () => runApp(
       const ProviderScope(
-        child: _RestartWidget(child: MyApp())
+        child: SentryWidget(
+          child: _RestartWidget(child: MyApp()),
+        )
       )
     ),
   );
