@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:async';
+import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 import 'package:github_search/repository/network/request/request_interface.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
 class APIService {
   final http.Client _client = http.Client();
@@ -17,9 +19,16 @@ class APIService {
       if (200 <= response.statusCode && response.statusCode < 300) {
         return response;
       } else {
-        throw Exception({response.body});
+        throw Exception({
+          request.sentryMessage, 
+          response.body
+        });
       }
-    } catch(_) {
+    } catch(exception, stackTrace) {
+      await Sentry.captureException(
+        exception,
+        stackTrace: stackTrace
+      );
       rethrow;
     }
   }

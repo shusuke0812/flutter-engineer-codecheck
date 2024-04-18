@@ -9,4 +9,6 @@ abstract class RequestInterface {
   Future<Map<String, dynamic>> body() async => {};
   
   Future<Map<String, String>> header() async => {};
+
+  String get sentryMessage;
 }
