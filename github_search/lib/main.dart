@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/utility/logger.dart';
 import 'package:github_search/utility/router/router.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.blueGrey,
   ));
 
-  runApp(
-    const ProviderScope(
-      child: _RestartWidget(child: MyApp())
-    )
+  await dotenv.load(fileName: ".env");
+  await SentryFlutter.init(
+    (options) {
+      options.dsn = dotenv.get('SENTRY_DSN');
+      options.tracesSampleRate = 1.0;
+      options.profilesSampleRate = 1.0;
+    },
+    appRunner: () => runApp(
+      const ProviderScope(
+        child: _RestartWidget(child: MyApp())
+      )
+    ),
   );
 }
 
