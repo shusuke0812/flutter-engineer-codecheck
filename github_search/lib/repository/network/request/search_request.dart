@@ -39,4 +39,9 @@ class SearchRequest extends RequestInterface {
 
   @override
   Future<Map<String, String>> header() async => Constant.githubHeader;
+
+  @override
+  String get sentryMessage {
+    return "path=$path, searchWord=$searchWord";
+  }
 }
