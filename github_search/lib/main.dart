@@ -11,7 +11,7 @@ void main() async {
     statusBarColor: Colors.blueGrey,
   ));
 
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: '.env');
   await SentryFlutter.init(
     (options) {
       options.dsn = dotenv.get('SENTRY_DSN');
