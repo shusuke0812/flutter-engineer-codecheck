@@ -26,6 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   sentry_flutter: ^7.20.0
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
