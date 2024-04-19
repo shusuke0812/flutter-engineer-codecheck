@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:async';
-import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 import 'package:github_search/repository/network/request/request_interface.dart';
