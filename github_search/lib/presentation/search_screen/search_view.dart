@@ -37,7 +37,7 @@ class _SearchContentView extends ConsumerWidget {
       if (next == AppLifecycleState.resumed) {
         //restartApp(context);
       }
-     });
+    });
 
     return Scaffold(
       appBar: customAppBar(title),
@@ -46,7 +46,7 @@ class _SearchContentView extends ConsumerWidget {
         children: [
           GitHubSearchTextFieldWidget(
             onSubmitted: (String searchWord) {
-              viewModel.loadRepositoryList(searchWord);
+              viewModel.loadRepositoryList(searchWord, context);
             },
           ),
           Expanded(
@@ -67,7 +67,7 @@ class _SearchContentView extends ConsumerWidget {
             child: const Icon(FontAwesomeIcons.bolt),
             onPressed: () async {
             // NOTE: debug for getting REST api response
-              viewModel.loadRepositoryList('flutter');
+              viewModel.loadRepositoryList('flutter', context);
             }
           )
         : null,
