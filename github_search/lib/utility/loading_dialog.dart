@@ -23,3 +23,7 @@ Future<void> showLoadingDialog({
     }
   );
 }
+
+void closeLoadingDialog(BuildContext context) {
+  Navigator.pop(context);
+}
