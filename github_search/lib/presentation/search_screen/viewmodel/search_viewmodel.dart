@@ -17,10 +17,10 @@ class SearchViewModel extends _$SearchViewModel {
     result.when(
       success: (data) {
         logger.d("response=$data");
-        state = state.updateList(data);
+        state = state.copyWith(list: data);
       }, 
       error: (error) {
-        state = state.updateErrorMessage('Failed to search');
+        state = state.copyWith(errorMessage: "Failed to search");
       }, 
       exception: (exception) {
         // do nothing
