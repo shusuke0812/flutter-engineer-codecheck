@@ -7,7 +7,7 @@ part of 'repository_detail_viewmodel.dart';
 // **************************************************************************
 
 String _$repositoryDetailViewModelHash() =>
-    r'60a2eaad3fff97778934a4b5f48b82da812450fd';
+    r'480d44af48b085be32ef9748f8f5b99e4411693e';
 
 /// See also [RepositoryDetailViewModel].
 @ProviderFor(RepositoryDetailViewModel)
