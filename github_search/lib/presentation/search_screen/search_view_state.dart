@@ -10,13 +10,3 @@ class SearchViewState with _$SearchViewState {
     @Default('') String errorMessage
   }) = _SearchViewState;
 }
-
-extension SearchViewStateExtension on SearchViewState {
-  SearchViewState updateList(RepositoryList value) => copyWith(
-    list: value
-  );
-
-  SearchViewState updateErrorMessage(String value) => copyWith(
-    errorMessage: value
-  );
-}

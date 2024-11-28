@@ -11,17 +11,3 @@ class RepositoryDetailViewState with _$RepositoryDetailViewState {
     @Default("") String errorMessage
   }) = _RepisitoryDetailViewState;
 }
-
-extension RepositoryDetailViewStateExtension on RepositoryDetailViewState {
-  RepositoryDetailViewState updateHtmlUrl(String value) => copyWith(
-    htmlUrl: value
-  );
-
-  RepositoryDetailViewState updateGetRepository(GetRepository value) => copyWith(
-    getRepository: value
-  );
-
-  RepositoryDetailViewState updateErrorMessage(String value) => copyWith(
-    errorMessage: value
-  );
-}

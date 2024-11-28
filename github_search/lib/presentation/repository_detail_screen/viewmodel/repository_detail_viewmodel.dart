@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:github_search/presentation/repository_detail_screen/repository_detail_view_state.dart';
 import 'package:github_search/repository/readme_repository.dart';
 import 'package:github_search/repository/repo_repository.dart';
@@ -18,11 +20,11 @@ class RepositoryDetailViewModel extends _$RepositoryDetailViewModel {
     result.when(
       success: (data) {
         if (data.htmlUrl != null) {
-          state = state.updateHtmlUrl(data.htmlUrl!);
+          state = state.copyWith(htmlUrl: data.htmlUrl!);
         }
       }, 
       error: (error) {
-        state = state.updateErrorMessage("Not found README");
+        state = state.copyWith(errorMessage: "Not found README");
       }, 
       exception: (exception) {
         // do nothing
@@ -34,10 +36,10 @@ class RepositoryDetailViewModel extends _$RepositoryDetailViewModel {
     final result = await repoRepository.getRepository(fullName: fullName);
     result.when(
       success: (data) {
-        state = state.updateGetRepository(data);
+        state = state.copyWith(getRepository: data);
       },
       error: (error) {
-        state = state.updateErrorMessage("Not found subscribers count");
+        state = state.copyWith(errorMessage: "Not found subscribers count");
       },
       exception: (exception) {
         // do nothing
