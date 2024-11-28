@@ -39,6 +39,13 @@ dev_dependencies:
   riverpod_generator: 
   json_serializable: ^6.3.1
 
+flutter_native_splash:
+  color: "#fffafa"
+  image: assets/image/splash_github_mark.png
+  android_12:
+    icon_background_color: "#fffafa"
+    image: assets/image/splash_github_mark_android12.png
+
 flutter:
   uses-material-design: true
   assets:
