@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_native_splash: e8a1e01082d97a8099d973f919f57904c925008a
-  package_info_plus: 58f0028419748fad15bf008b270aaa8e54380b1c
+  package_info_plus: c0502532a26c7662a62a356cebe2692ec5fe4ec4
   Sentry: e9215d7b17f7902692b4f8700e061e4f853e3521
   sentry_flutter: 927eed60d66951d1b0f1db37fe94ff5cb7c80231
   url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe

@@ -4,7 +4,7 @@
 
 I adopt MVVM like a native app as Flutter architecture. This architecture follows parts of [the Android App Architecture](https://developer.android.com/topic/architecture).
 
-![flutter_mvvm](https://github.com/shusuke0812/flutter-engineer-codecheck/assets/33107697/a625d45f-30eb-4083-932b-5d263ff7c564)
+![flutter_mvvm](https://github.com/user-attachments/assets/69113981-4ec6-4fc5-b0e4-aa494c9d48bc)
 
 ## Features
 
