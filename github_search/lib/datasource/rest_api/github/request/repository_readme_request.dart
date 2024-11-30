@@ -1,6 +1,6 @@
 import 'package:github_search/utility/constant.dart';
-import 'package:github_search/infrastructure/rest_api/http_method.dart';
-import 'package:github_search/infrastructure/rest_api/github/request/request_interface.dart';
+import 'package:github_search/datasource/rest_api/http_method.dart';
+import 'package:github_search/datasource/rest_api/github/request/request_interface.dart';
 
 
 // Reference

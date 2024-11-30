@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/domain/repository_interface/entity/repository.dart';
-import 'package:github_search/infrastructure/rest_api/result.dart';
+import 'package:github_search/datasource/rest_api/result.dart';
 
 final repoRepositoryProvider = Provider<RepoRepositoryInterface>(
   (ref) => throw UnimplementedError("Does not initialize RepoRepository()")
