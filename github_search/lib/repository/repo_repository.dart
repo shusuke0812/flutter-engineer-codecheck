@@ -1,11 +1,15 @@
 import 'dart:convert';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/entity/repository.dart';
 import 'package:github_search/repository/network/request/get_repository_request.dart';
 import 'package:github_search/repository/network/result.dart';
 import 'package:github_search/repository/network/api_service.dart';
 
 // Interface
+final repoRepositoryProvider = Provider<RepoRepositoryInterface>(
+  (ref) => throw UnimplementedError("Does not initialize RepoRepository()")
+);
 
 abstract class RepoRepositoryInterface {
   Future<Result<GetRepository>> getRepository({required String fullName});

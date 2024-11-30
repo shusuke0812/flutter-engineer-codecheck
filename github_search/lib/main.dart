@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:github_search/di/repository_injection.dart';
 import 'package:github_search/utility/logger.dart';
 import 'package:github_search/utility/router/router.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -20,8 +21,9 @@ void main() async {
       options.attachScreenshot = true;
     },
     appRunner: () => runApp(
-      const ProviderScope(
-        child: SentryWidget(
+      ProviderScope(
+        overrides: repositoryInjection,
+        child: const SentryWidget(
           child: _RestartWidget(child: MyApp()),
         )
       )

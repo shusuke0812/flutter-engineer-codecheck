@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:github_search/entity/repository_list.dart';
 import 'package:github_search/repository/network/api_service.dart';
 import 'package:github_search/repository/network/request/search_request.dart';
@@ -11,6 +12,9 @@ import 'package:github_search/repository/network/result.dart';
 // - repository with Riverpod: https://riverpod.dev/docs/cookbooks/testing#overriding-the-behavior-of-a-provider-during-tests
 
 // Interface
+final searchRepositoryProvider = Provider<SearchRepositoryInterface>(
+  (ref) => throw UnimplementedError("Does not initialze SearchRepository()")
+);
 
 abstract class SearchRepositoryInterface {
   Future<Result<RepositoryList>> getRepositories({required String searchWord});
