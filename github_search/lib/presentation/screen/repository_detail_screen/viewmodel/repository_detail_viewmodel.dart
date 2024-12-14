@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:github_search/presentation/screen/repository_detail_screen/repository_detail_view_state.dart';
 import 'package:github_search/domain/repository_interface/readme_repository_interface.dart';
 import 'package:github_search/domain/repository_interface/repo_repository_interface.dart';
