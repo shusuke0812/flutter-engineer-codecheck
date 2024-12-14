@@ -5,6 +5,6 @@ FLUTTER := $(FVM) flutter
 build-runner:
 	$(FLUTTER) packages pub run build_runner build --delete-conflicting-outputs
 
-.PHONY: imort-sort
-build-runner:
+.PHONY: import-sort
+import-sort:
   $(FLUTTER) pub run import_sorter:main
