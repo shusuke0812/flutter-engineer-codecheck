@@ -7,4 +7,4 @@ build-runner:
 
 .PHONY: import-sort
 import-sort:
-  $(FLUTTER) pub run import_sorter:main
+	$(FLUTTER) pub run import_sorter:main
