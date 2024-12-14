@@ -1,11 +1,12 @@
-
+// Dart imports:
 import 'dart:convert';
 
-import 'package:github_search/domain/repository_interface/entity/repository.dart';
-import 'package:github_search/domain/repository_interface/repo_repository_interface.dart';
+// Project imports:
 import 'package:github_search/datasource/rest_api/api_service.dart';
 import 'package:github_search/datasource/rest_api/github/request/get_repository_request.dart';
 import 'package:github_search/datasource/rest_api/result.dart';
+import 'package:github_search/domain/repository_interface/entity/repository.dart';
+import 'package:github_search/domain/repository_interface/repo_repository_interface.dart';
 
 class RepoRepository implements RepoRepositoryInterface {
   final APIService apiService = APIService();

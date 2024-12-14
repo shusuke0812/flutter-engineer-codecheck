@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:github_search/domain/repository_interface/entity/repository.dart';
 
 class RepositoryCellWidget extends StatelessWidget {

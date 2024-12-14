@@ -1,5 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+// Project imports:
 import 'package:github_search/presentation/screen/repository_detail_screen/model/repository_item_icon.dart';
 
 class RepositoryItemIconWidget extends StatelessWidget {

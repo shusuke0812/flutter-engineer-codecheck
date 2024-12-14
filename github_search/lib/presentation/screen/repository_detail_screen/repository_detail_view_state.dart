@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:github_search/domain/repository_interface/entity/repository.dart';
 
 part 'repository_detail_view_state.freezed.dart';

@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:github_search/domain/repository_interface/entity/license.dart';
 import 'package:github_search/domain/repository_interface/entity/repository.dart';
 import 'package:github_search/presentation/screen/repository_detail_screen/model/repository_item_icon.dart';

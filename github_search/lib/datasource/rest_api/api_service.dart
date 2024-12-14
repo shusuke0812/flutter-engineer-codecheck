@@ -1,9 +1,13 @@
-import 'dart:convert';
+// Dart imports:
 import 'dart:async';
-import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-import 'package:github_search/datasource/rest_api/github/request/request_interface.dart';
+// Package imports:
+import 'package:http/http.dart' as http;
 import 'package:sentry_flutter/sentry_flutter.dart';
+
+// Project imports:
+import 'package:github_search/datasource/rest_api/github/request/request_interface.dart';
 
 class APIService {
   final http.Client _client = http.Client();

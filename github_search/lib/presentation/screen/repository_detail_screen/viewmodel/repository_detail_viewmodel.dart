@@ -1,7 +1,10 @@
-import 'package:github_search/presentation/screen/repository_detail_screen/repository_detail_view_state.dart';
+// Package imports:
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+// Project imports:
 import 'package:github_search/domain/repository_interface/readme_repository_interface.dart';
 import 'package:github_search/domain/repository_interface/repo_repository_interface.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:github_search/presentation/screen/repository_detail_screen/repository_detail_view_state.dart';
 
 part 'repository_detail_viewmodel.g.dart';
 

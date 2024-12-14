@@ -1,14 +1,19 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+
+// Project imports:
+import 'package:github_search/presentation/router/router_path.dart';
 import 'package:github_search/presentation/screen/search_screen/viewmodel/search_viewmodel.dart';
 import 'package:github_search/presentation/screen/search_screen/widget/repository_list_widget.dart';
 import 'package:github_search/presentation/screen/search_screen/widget/search_text_field_widget.dart';
 import 'package:github_search/utility/app_lifecycle_listener.dart';
 import 'package:github_search/utility/view/custom_app_bar.dart';
-import 'package:github_search/presentation/router/router_path.dart';
-import 'package:go_router/go_router.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key, required this.title});

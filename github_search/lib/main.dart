@@ -1,11 +1,16 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+
+// Project imports:
+import 'package:github_search/presentation/router/router.dart';
 import 'package:github_search/utility/di/repository_injection.dart';
 import 'package:github_search/utility/logger.dart';
-import 'package:github_search/presentation/router/router.dart';
-import 'package:sentry_flutter/sentry_flutter.dart';
 
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

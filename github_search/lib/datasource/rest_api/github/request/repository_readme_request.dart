@@ -1,7 +1,7 @@
-import 'package:github_search/utility/constant.dart';
-import 'package:github_search/datasource/rest_api/http_method.dart';
+// Project imports:
 import 'package:github_search/datasource/rest_api/github/request/request_interface.dart';
-
+import 'package:github_search/datasource/rest_api/http_method.dart';
+import 'package:github_search/utility/constant.dart';
 
 // Reference
 // - doc: https://docs.github.com/ja/free-pro-team@latest/rest/repos/contents?apiVersion=2022-11-28#get-a-repository-readme

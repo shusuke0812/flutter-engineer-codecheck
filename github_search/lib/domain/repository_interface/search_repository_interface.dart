@@ -1,8 +1,9 @@
-
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:github_search/domain/repository_interface/entity/repository_list.dart';
+// Project imports:
 import 'package:github_search/datasource/rest_api/result.dart';
+import 'package:github_search/domain/repository_interface/entity/repository_list.dart';
 
 // Reference
 // - repository pattern on Flutter: https://codewithandrea.com/articles/flutter-repository-pattern/#writing-tests-with-repositories

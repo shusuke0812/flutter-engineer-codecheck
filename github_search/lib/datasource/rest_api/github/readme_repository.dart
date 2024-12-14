@@ -1,11 +1,12 @@
-
+// Dart imports:
 import 'dart:convert';
 
-import 'package:github_search/domain/repository_interface/entity/readme.dart';
-import 'package:github_search/domain/repository_interface/readme_repository_interface.dart';
+// Project imports:
 import 'package:github_search/datasource/rest_api/api_service.dart';
 import 'package:github_search/datasource/rest_api/github/request/repository_readme_request.dart';
 import 'package:github_search/datasource/rest_api/result.dart';
+import 'package:github_search/domain/repository_interface/entity/readme.dart';
+import 'package:github_search/domain/repository_interface/readme_repository_interface.dart';
 
 class ReadmeRepository implements ReadmeRepositoryInterface {
   final APIService apiService = APIService();

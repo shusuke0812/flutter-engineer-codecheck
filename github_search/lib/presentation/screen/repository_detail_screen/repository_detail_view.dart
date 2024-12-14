@@ -1,13 +1,19 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:github_search/presentation/screen/repository_detail_screen/viewmodel/repository_detail_viewmodel.dart';
-import 'package:github_search/utility/view/custom_app_bar.dart';
-import 'package:github_search/utility/view/webview_controller_factory.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
+// Project imports:
 import 'package:github_search/domain/repository_interface/entity/repository.dart';
+import 'package:github_search/presentation/screen/repository_detail_screen/viewmodel/repository_detail_viewmodel.dart';
 import 'package:github_search/presentation/screen/repository_detail_screen/widget/repository_detail_body_widget.dart';
 import 'package:github_search/presentation/screen/repository_detail_screen/widget/repository_detail_header_widget.dart';
+import 'package:github_search/utility/view/custom_app_bar.dart';
+import 'package:github_search/utility/view/webview_controller_factory.dart';
+
 class RepositoryDetailView extends StatelessWidget {
   const RepositoryDetailView({
     super.key,
